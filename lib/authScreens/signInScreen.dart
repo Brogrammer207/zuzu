@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:zuzu/account%20setup/chooseYourIntrest.dart';
+import 'package:zuzu/forgetPassword/forgetPasswordScreen.dart';
 import 'package:zuzu/widgets/apptheme.dart';
 
 import '../widgets/commanButton.dart';
@@ -101,12 +102,17 @@ class _SignInScreenState extends State<SignInScreen> {
                 },
               ),
               const SizedBox(height: 10,),
-              const Text(
-                "Forget Password",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: AppTheme.primaryColor,
-                  fontSize: 16,
+              GestureDetector(
+                onTap: (){
+                  Get.to(const ForgetPasswordScreen());
+                },
+                child: const Text(
+                  "Forget Password",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: AppTheme.primaryColor,
+                    fontSize: 16,
+                  ),
                 ),
               ),
               const SizedBox(
