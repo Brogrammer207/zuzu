@@ -6,10 +6,12 @@ import 'package:get/get_core/src/get_main.dart';
 class CommonButton extends StatefulWidget {
   final String text;
   final VoidCallback onPressed;
+  final Color color;
 
   const CommonButton({
     required this.text,
     required this.onPressed,
+    required this.color,
   });
 
   @override
@@ -29,7 +31,7 @@ class _CommonButtonState extends State<CommonButton> {
         child: ElevatedButton(
           onPressed: widget.onPressed,
           style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xffff4d67),
+              backgroundColor: widget.color,
               textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500)),
           child: Text(widget.text,style: TextStyle(color: Colors.white),),));
   }

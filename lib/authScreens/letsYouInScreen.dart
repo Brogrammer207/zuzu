@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:zuzu/authScreens/signUpScreen.dart';
 import 'package:zuzu/widgets/apptheme.dart';
 import 'package:zuzu/widgets/commanButton.dart';
 
@@ -46,7 +48,7 @@ class _LetsYouINState extends State<LetsYouIN> {
               text: 'Continue with Facebook',
               imagePath: 'assets/images/facebook.png',
               onPressed: () {
-                // Handle Facebook button press
+
               },
             ),
             LetsYouInContainer(
@@ -94,7 +96,11 @@ class _LetsYouINState extends State<LetsYouIN> {
             const SizedBox(
               height: 30,
             ),
-            CommonButton(text: 'Sign in with password', onPressed: () {}),
+            CommonButton(text: 'Sign in with password',
+                color: AppTheme.primaryColor,
+                onPressed: () {
+              Get.to(const SignUpScreen());
+            }),
             const SizedBox(
               height: 30,
             ),
