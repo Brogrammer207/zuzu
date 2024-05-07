@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
+import 'package:zuzu/profileAndSetting/settingScreen.dart';
 
 import '../widgets/apptheme.dart';
 
@@ -36,10 +38,14 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
           children: [Text('Manish'), Icon(Icons.keyboard_arrow_down_outlined)],
         ),
         centerTitle: true,
-        actions: const [
+        actions:  [
           Padding(
             padding: EdgeInsets.only(right: 8.0),
-            child: Icon(Icons.settings),
+            child: InkWell(
+              onTap: (){
+                Get.to(SettingScreen());
+              },
+                child: Icon(Icons.settings)),
           )
         ],
       ),

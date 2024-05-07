@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:zuzu/widgets/apptheme.dart';
 
 class CommonButton extends StatefulWidget {
   final String text;
@@ -21,22 +22,21 @@ class CommonButton extends StatefulWidget {
 class _CommonButtonState extends State<CommonButton> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        margin: EdgeInsets.only(left: 15,right: 15),
-        height: 50,
-        width: Get.width,
-        decoration: const BoxDecoration(
-          shape: BoxShape.circle,
-        ),
-        child: ElevatedButton(
-          onPressed: widget.onPressed,
-          style: ElevatedButton.styleFrom(
-              backgroundColor: widget.color,
-              textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500)),
-          child: Text(widget.text,style: TextStyle(color: Colors.white),),));
+    return GestureDetector(
+      onTap: widget.onPressed,
+      child: Container(
+          margin: const EdgeInsets.only(left: 15, right: 15),
+          height: 55,
+          width: Get.width,
+          decoration: BoxDecoration(color: widget.color, borderRadius: BorderRadius.circular(25)),
+          child: Center(
+              child: Text(
+            widget.text,
+            style: const TextStyle(color: AppTheme.primaryColor, fontWeight: FontWeight.w500),
+          ))),
+    );
   }
 }
-
 
 class LetsYouInContainer extends StatelessWidget {
   final String text;
@@ -53,7 +53,7 @@ class LetsYouInContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
-      padding: EdgeInsets.only(top: 8, bottom: 8),
+      padding: const EdgeInsets.only(top: 8, bottom: 8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(11),
         border: Border.all(color: Colors.grey.shade300, width: 1),
@@ -69,12 +69,12 @@ class LetsYouInContainer extends StatelessWidget {
               height: 35,
               width: 35,
             ),
-            SizedBox(
+            const SizedBox(
               width: 5,
             ),
             Text(
               text,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
                 color: Colors.black,
