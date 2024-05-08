@@ -97,6 +97,7 @@ class _SignInScreenState extends State<SignInScreen> {
               CommonButton(
                 text: 'Sign In',
                 color: AppTheme.primaryColor,
+                textColor: Colors.white,
                 onPressed: () {
                   Get.to(const ChooseYourIntrestScreen());
                 },

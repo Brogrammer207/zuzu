@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:zuzu/widgets/apptheme.dart';
 
 import '../widgets/commanButton.dart';
 
@@ -61,7 +62,6 @@ class _SecurityScreenState extends State<SecurityScreen> {
               ),
               onTap: () {},
             ),
-
             const Padding(
               padding: EdgeInsets.only(left: 15),
               child: Text(
@@ -123,10 +123,24 @@ class _SecurityScreenState extends State<SecurityScreen> {
               ),
               onTap: () {},
             ),
-            const SizedBox(height: 20,),
-            CommonButton(text: 'Change Pin', onPressed: () {  }, color: const Color(0xffffecf0),),
-            const SizedBox(height: 20,),
-            CommonButton(text: 'Change Password', onPressed: () {  }, color: const Color(0xffffecf0),),
+            const SizedBox(
+              height: 20,
+            ),
+            CommonButton(
+              text: 'Change Pin',
+              textColor: AppTheme.primaryColor,
+              onPressed: () {},
+              color: const Color(0xffffecf0),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            CommonButton(
+              text: 'Change Password',
+              textColor: AppTheme.primaryColor,
+              onPressed: () {},
+              color: const Color(0xffffecf0),
+            ),
           ],
         ),
       ),

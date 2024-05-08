@@ -100,6 +100,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
               const SizedBox(height: 30,),
               CommonButton(
                 text: 'Continue',
+                textColor: Colors.white,
                 color: AppTheme.primaryColor,
                 onPressed: () {
                   Get.to(const ForgetPasswordPin());

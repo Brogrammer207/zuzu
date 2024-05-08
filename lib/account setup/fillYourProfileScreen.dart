@@ -121,6 +121,7 @@ class _FillYourProfileScreenState extends State<FillYourProfileScreen> {
                 Expanded(
                   child: CommonButton(
                     text: 'Skip',
+                    textColor: AppTheme.primaryColor,
                     color: const Color(0x33ff4d67),
                     onPressed: () {
                       // Add your logic for button press
@@ -130,6 +131,7 @@ class _FillYourProfileScreenState extends State<FillYourProfileScreen> {
                 Expanded(
                   child: CommonButton(
                     text: 'Continue',
+                    textColor: Colors.white,
                     color: AppTheme.primaryColor,
                     onPressed: () {
                       Get.to(const CreateNewPin());

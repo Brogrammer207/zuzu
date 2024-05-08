@@ -95,6 +95,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               CommonButton(
                 text: 'Sign Up',
+                textColor: Colors.white,
                 color: AppTheme.primaryColor,
                 onPressed: () {},
               ),

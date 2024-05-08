@@ -93,6 +93,7 @@ class _ForgetPasswordPinState extends State<ForgetPasswordPin> {
                     CommonButton(
                       text: 'Verify',
                       color: AppTheme.primaryColor,
+                      textColor: Colors.white,
                       onPressed: () {
                         Get.to(const CreateNewPasswordScreen());
                         // Add your logic for button press

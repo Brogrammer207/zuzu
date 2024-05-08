@@ -60,14 +60,14 @@ List<OnBoardModelResponse> OnBoardingData = [
   OnBoardModelResponse(
     image: AppAssets.onboarding2,
     title: "Beautifully-designed menus",
-    description: 'Every menu item is manually reviewed by our team',
+    description: 'Find your friends and play together on social media',
       buttonText: 'Next'
 
   ),
   OnBoardModelResponse(
     image: AppAssets.onboarding3,
     title: "Unbeatable rates",
-    description: 'We don’t charge any order fees. Delivery fees go where they belong.',
+    description: 'Lets have fun with your friends & zuzu right now',
       buttonText: 'Get Started'
 
   )

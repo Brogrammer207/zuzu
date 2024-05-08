@@ -64,6 +64,7 @@ class _SetYourFingerPrintScreenState extends State<SetYourFingerPrintScreen> {
                 Expanded(
                   child: CommonButton(
                     text: 'Skip',
+                    textColor: AppTheme.primaryColor,
                     color: const Color(0x33ff4d67),
                     onPressed: () {
                       // Add your logic for button press
@@ -73,6 +74,7 @@ class _SetYourFingerPrintScreenState extends State<SetYourFingerPrintScreen> {
                 Expanded(
                   child: CommonButton(
                     text: 'Continue',
+                    textColor: Colors.white,
                     color: AppTheme.primaryColor,
                     onPressed: () {
                       showDialog(

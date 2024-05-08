@@ -86,6 +86,7 @@ class _CreateNewPinState extends State<CreateNewPin> {
                 const SizedBox(height: 100,),
                 CommonButton(
                   text: 'Continue',
+                  textColor: Colors.white,
                   color: AppTheme.primaryColor,
                   onPressed: () {
                     Get.to(const SetYourFingerPrintScreen());

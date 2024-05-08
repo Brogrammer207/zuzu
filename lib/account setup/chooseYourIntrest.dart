@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zuzu/account%20setup/tellUsAboutYourSelfScreen.dart';
 import 'package:zuzu/account%20setup/whenisbirthdayScreen.dart';
+import 'package:zuzu/profileAndSetting/profileScreen.dart';
 import 'package:zuzu/widgets/apptheme.dart';
 
 import '../widgets/commanButton.dart';
@@ -72,6 +73,7 @@ class _ChooseYourIntrestScreenState extends State<ChooseYourIntrestScreen> {
                 itemBuilder: (context, index) {
                   return CommonButton(
                     text: interests[index],
+                    textColor: Colors.white,
                     color: AppTheme.primaryColor,
                     onPressed: () {
                       // Add your logic for button press
@@ -92,8 +94,10 @@ class _ChooseYourIntrestScreenState extends State<ChooseYourIntrestScreen> {
                 Expanded(
                   child: CommonButton(
                     text: 'Skip',
-                    color: Color(0x33ff4d67),
+                    textColor: AppTheme.primaryColor,
+                    color: Color(0xffffedf0),
                     onPressed: () {
+                      Get.to(ProfileScreen());
                       // Add your logic for button press
                     },
                   ),
@@ -102,6 +106,7 @@ class _ChooseYourIntrestScreenState extends State<ChooseYourIntrestScreen> {
                   child: CommonButton(
                     text: 'Continue',
                     color: AppTheme.primaryColor,
+                    textColor: Colors.white,
                     onPressed: () {
                       Get.to(const TellUsAboutYourSelfScreen());
                       // Add your logic for button press

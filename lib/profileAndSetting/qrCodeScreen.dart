@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:zuzu/widgets/apptheme.dart';
 import 'package:zuzu/widgets/commanButton.dart';
 
 class QRCodeScreen extends StatefulWidget {
@@ -47,7 +48,7 @@ class _QRCodeScreenState extends State<QRCodeScreen> {
               const SizedBox(
                 height: 100,
               ),
-              CommonButton(text: 'Scan QR Code', onPressed: () {}, color: Colors.white)
+              CommonButton(text: 'Scan QR Code', onPressed: () {}, color: Colors.white,textColor: AppTheme.primaryColor,)
             ],
           ),
         ),

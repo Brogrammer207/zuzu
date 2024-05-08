@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:zuzu/profileAndSetting/profileScreen.dart';
 
+import 'inboxActivity/allActivityScreen.dart';
 import 'onBoarding/splash.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const ProfileScreen(),
+      home: const AllActivityScreen(),
     );
   }
 }

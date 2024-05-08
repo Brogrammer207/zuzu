@@ -100,6 +100,7 @@ class _TellUsAboutYourSelfScreenState extends State<TellUsAboutYourSelfScreen> {
                   child: CommonButton(
                     text: 'Skip',
                     color: const Color(0x33ff4d67),
+                    textColor: AppTheme.primaryColor,
                     onPressed: () {
                       // Add your logic for button press
                     },
@@ -109,6 +110,7 @@ class _TellUsAboutYourSelfScreenState extends State<TellUsAboutYourSelfScreen> {
                   child: CommonButton(
                     text: 'Continue',
                     color: AppTheme.primaryColor,
+                    textColor: Colors.white,
                     onPressed: () {
                       Get.to(const WhenIsYourBirthdayScreen());
                       // Add your logic for button press

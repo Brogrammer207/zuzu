@@ -8,11 +8,14 @@ class CommonButton extends StatefulWidget {
   final String text;
   final VoidCallback onPressed;
   final Color color;
+  final Color textColor;
 
   const CommonButton({
     required this.text,
     required this.onPressed,
     required this.color,
+    required this.textColor,
+
   });
 
   @override
@@ -32,7 +35,7 @@ class _CommonButtonState extends State<CommonButton> {
           child: Center(
               child: Text(
             widget.text,
-            style: const TextStyle(color: AppTheme.primaryColor, fontWeight: FontWeight.w500),
+            style: TextStyle(color: widget.textColor, fontWeight: FontWeight.w500),
           ))),
     );
   }

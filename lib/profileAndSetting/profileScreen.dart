@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
+import 'package:zuzu/profileAndSetting/editProfileScreen.dart';
+import 'package:zuzu/profileAndSetting/findFriendsScreen.dart';
 import 'package:zuzu/profileAndSetting/settingScreen.dart';
 
 import '../widgets/apptheme.dart';
@@ -34,18 +36,20 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(Icons.person_add_alt),
-        title: const Row(
-          children: [Text('Manish'), Icon(Icons.keyboard_arrow_down_outlined)],
+        title: Center(
+          child: const Row(
+            children: [Text('Manish'), Icon(Icons.keyboard_arrow_down_outlined)],
+          ),
         ),
         centerTitle: true,
-        actions:  [
+        actions: [
           Padding(
-            padding: EdgeInsets.only(right: 8.0),
+            padding: const EdgeInsets.only(right: 8.0),
             child: InkWell(
-              onTap: (){
-                Get.to(SettingScreen());
-              },
-                child: Icon(Icons.settings)),
+                onTap: () {
+                  Get.to(const SettingScreen());
+                },
+                child: const Icon(Icons.settings)),
           )
         ],
       ),
@@ -102,18 +106,23 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                   const SizedBox(
                     width: 20,
                   ),
-                  const Expanded(
-                    child: Column(
-                      children: [
-                        Text(
-                          '247',
-                          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600, fontSize: 17),
-                        ),
-                        Text(
-                          'Post',
-                          style: TextStyle(color: Colors.black, fontSize: 10),
-                        ),
-                      ],
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        Get.to(const FindFrindsScreen());
+                      },
+                      child: const Column(
+                        children: [
+                          Text(
+                            '247',
+                            style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600, fontSize: 17),
+                          ),
+                          Text(
+                            'Post',
+                            style: TextStyle(color: Colors.black, fontSize: 10),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -199,27 +208,92 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
               const SizedBox(
                 height: 20,
               ),
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                    border: Border.all(color: AppTheme.primaryColor, width: 2),
-                    borderRadius: BorderRadius.circular(25)),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.message,
-                      color: AppTheme.primaryColor,
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      'Edit Profile',
-                      style: TextStyle(color: AppTheme.primaryColor),
-                    )
-                  ],
+              InkWell(
+                onTap: () {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.white,
+                          ),
+                          child: Column(
+                            children: [
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              const Text(
+                                'Switch Account',
+                                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: Colors.black),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              ListView.builder(
+                                  itemCount: 4,
+                                  shrinkWrap: true,
+                                  physics: const AlwaysScrollableScrollPhysics(),
+                                  itemBuilder: (context, index) {
+                                    return ListTile(
+                                      leading: Image.asset('assets/images/apple.png'),
+                                      title: const Text(
+                                        'Manish Prajapat',
+                                        style:
+                                            TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black),
+                                      ),
+                                      subtitle: const Text(
+                                        '@manishprajapat',
+                                        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey),
+                                      ),
+                                      trailing: const Icon(
+                                        Icons.check,
+                                        color: AppTheme.primaryColor,
+                                      ),
+                                    );
+                                  }),
+                              ListTile(
+                                leading: const CircleAvatar(
+                                  minRadius: 30,
+                                  maxRadius: 30,
+                                  backgroundColor: AppTheme.lightColor,
+                                  child: Icon(
+                                    Icons.add,
+                                    color: AppTheme.primaryColor,
+                                  ),
+                                ),
+                                title: const Text('Add Account'),
+                                onTap: () {
+                                  Get.to(const EditProfileScreen());
+                                },
+                              )
+                            ],
+                          ));
+                    },
+                  );
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: AppTheme.primaryColor, width: 2),
+                      borderRadius: BorderRadius.circular(25)),
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.message,
+                        color: AppTheme.primaryColor,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        'Edit Profile',
+                        style: TextStyle(color: AppTheme.primaryColor),
+                      )
+                    ],
+                  ),
                 ),
               ),
               SizedBox(

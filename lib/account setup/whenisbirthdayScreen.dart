@@ -68,6 +68,7 @@ class _WhenIsYourBirthdayScreenState extends State<WhenIsYourBirthdayScreen> {
                   child: CommonButton(
                     text: 'Skip',
                     color: Color(0x33ff4d67),
+                    textColor: AppTheme.primaryColor,
                     onPressed: () {
                       // Add your logic for button press
                     },
@@ -77,6 +78,7 @@ class _WhenIsYourBirthdayScreenState extends State<WhenIsYourBirthdayScreen> {
                   child: CommonButton(
                     text: 'Continue',
                     color: AppTheme.primaryColor,
+                    textColor: Colors.white,
                     onPressed: () {
                       Get.to(const FillYourProfileScreen());
                       // Add your logic for button press

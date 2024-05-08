@@ -90,6 +90,7 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
               CommonButton(
                 text: 'Continue',
                 color: AppTheme.primaryColor,
+                textColor: Colors.white,
                 onPressed: () {
                   showDialog(
                     context: context,

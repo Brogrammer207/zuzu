@@ -97,6 +97,7 @@ class _LetsYouINState extends State<LetsYouIN> {
               height: 30,
             ),
             CommonButton(text: 'Sign in with password',
+                textColor: Colors.white,
                 color: AppTheme.primaryColor,
                 onPressed: () {
               Get.to(const SignUpScreen());
