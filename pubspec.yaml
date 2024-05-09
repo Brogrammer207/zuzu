@@ -40,6 +40,12 @@ dependencies:
   intl_phone_field: ^3.2.0
   pinput: ^4.0.0
   video_player: ^2.8.6
+  stacked_services: ^1.5.0
+  get_it: ^7.7.0
+  stacked: ^3.4.2
+  cached_network_image: ^3.3.1
+  firebase_core: ^2.31.0
+  cloud_firestore: ^4.17.3
 
 dev_dependencies:
   flutter_test:
