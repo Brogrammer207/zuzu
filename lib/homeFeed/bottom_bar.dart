@@ -61,17 +61,13 @@ class BottomBar extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              menuButton('Home', TikTokIcons.home, 0),
-              menuButton('Search', TikTokIcons.search, 1),
-              SizedBox(
-                width: 15,
-              ),
+              menuButton('Home', Icons.home, 0),
+              menuButton('Search', Icons.search, 1),
+
               customCreateIcon,
-              SizedBox(
-                width: 15,
-              ),
-              menuButton('Messages', TikTokIcons.messages, 2),
-              menuButton('Profile', TikTokIcons.profile, 3)
+
+              menuButton('Messages', Icons.message, 2),
+              menuButton('Profile', Icons.person, 3)
             ],
           ),
           SizedBox(
@@ -89,7 +85,7 @@ class BottomBar extends StatelessWidget {
         },
         child: Container(
           height: 45,
-          width: 80,
+          width: 75,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[

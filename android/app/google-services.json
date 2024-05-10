@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "764888306052",
+    "project_id": "zuzu-af455",
+    "storage_bucket": "zuzu-af455.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764888306052:android:cd134abd9abf189df00dd1",
+        "android_client_info": {
+          "package_name": "com.zuzu.zuzu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7KgenP7xKnRq6ep950fqBnNddt5l3uOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
