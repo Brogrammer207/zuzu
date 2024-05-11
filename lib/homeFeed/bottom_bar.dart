@@ -1,11 +1,15 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 import 'package:get_it/get_it.dart';
 import 'package:zuzu/homeFeed/tik_tok_icons_icons.dart';
 
 import 'feed_viewmodel.dart';
+import 'liveVideoScreen.dart';
 
 class BottomBar extends StatelessWidget {
   static const double NavigationIconSize = 20.0;
@@ -64,7 +68,11 @@ class BottomBar extends StatelessWidget {
               menuButton('Home', Icons.home, 0),
               menuButton('Search', Icons.search, 1),
 
-              customCreateIcon,
+              GestureDetector(
+                onTap: (){
+                  Get.to(LiveVideoScreen());
+                },
+                  child: customCreateIcon),
 
               menuButton('Messages', Icons.message, 2),
               menuButton('Profile', Icons.person, 3)

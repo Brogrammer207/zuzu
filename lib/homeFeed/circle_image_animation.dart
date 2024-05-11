@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CircleImageAnimation extends StatefulWidget {
-  CircleImageAnimation({Key? key, this.child}) : super(key: key);
+  CircleImageAnimation({Key? key, this.child, required this.onpressed}) : super(key: key);
 
   final Widget? child;
+  VoidCallback onpressed;
 
   @override
   _CircleImageAnimationState createState() => _CircleImageAnimationState();
@@ -33,8 +34,11 @@ class _CircleImageAnimationState extends State<CircleImageAnimation>
 
   @override
   Widget build(BuildContext context) {
-    return RotationTransition(
-        turns: Tween(begin: 0.0, end: 1.0).animate(_controller),
-        child: widget.child);
+    return GestureDetector(
+      onTap: widget.onpressed,
+      child: RotationTransition(
+          turns: Tween(begin: 0.0, end: 1.0).animate(_controller),
+          child: widget.child),
+    );
   }
 }

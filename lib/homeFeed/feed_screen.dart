@@ -1,13 +1,19 @@
+
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 import 'package:get_it/get_it.dart';
 import 'package:stacked/stacked.dart';
 import 'package:video_player/video_player.dart';
+import 'package:zuzu/homeFeed/followersScreen.dart';
 import 'package:zuzu/homeFeed/search_screen.dart';
 import 'package:zuzu/homeFeed/video.dart';
 import 'package:zuzu/homeFeed/video_description.dart';
+import 'package:zuzu/widgets/apptheme.dart';
 
 import '../profileAndSetting/profileScreen.dart';
 import 'actions_toolbar.dart';
@@ -42,9 +48,7 @@ class _FeedScreenState extends State<FeedScreen> {
 
   Widget videoScreen() {
     return Scaffold(
-      backgroundColor: GetIt.instance<FeedViewModel>().actualScreen == 0
-          ? Colors.black
-          : Colors.white,
+      backgroundColor: GetIt.instance<FeedViewModel>().actualScreen == 0 ? Colors.black : Colors.white,
       body: Stack(
         children: [
           PageView.builder(
@@ -54,8 +58,7 @@ class _FeedScreenState extends State<FeedScreen> {
               if (value == 1)
                 SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
               else
-                SystemChrome.setSystemUIOverlayStyle(
-                    SystemUiOverlayStyle.light);
+                SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
             },
             itemBuilder: (context, index) {
               if (index == 0)
@@ -77,18 +80,15 @@ class _FeedScreenState extends State<FeedScreen> {
               color: Colors.white,
               child: Column(children: [
                 Container(
-                  decoration: BoxDecoration(
-                      border:
-                          Border(bottom: BorderSide(color: Colors.black12))),
-                  padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-                  child: Row(
+                  decoration: const BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black12))),
+                  padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Icon(Icons.arrow_back_ios),
                       Text(
                         "Charlotte Stone",
-                        style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.bold),
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                       ),
                       Icon(Icons.more_horiz)
                     ],
@@ -96,7 +96,7 @@ class _FeedScreenState extends State<FeedScreen> {
                 ),
                 Column(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     Row(
@@ -108,42 +108,84 @@ class _FeedScreenState extends State<FeedScreen> {
                                 "https://www.andersonsobelcosmetic.com/wp-content/uploads/2018/09/chin-implant-vs-fillers-best-for-improving-profile-bellevue-washington-chin-surgery.jpg",
                             height: 100.0,
                             width: 100.0,
-                            placeholder: (context, url) =>
-                                CircularProgressIndicator(),
-                            errorWidget: (context, url, error) =>
-                                Icon(Icons.error),
+                            placeholder: (context, url) => const CircularProgressIndicator(),
+                            errorWidget: (context, url, error) => const Icon(Icons.error),
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    Text(
+                    const Text(
                       "@Charlotte21",
-                      style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Column(
+                        const Column(
                           children: [
                             Text(
                               "232",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
+                              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "Posts",
+                              style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          color: Colors.black54,
+                          width: 1,
+                          height: 15,
+                          margin: const EdgeInsets.symmetric(horizontal: 15),
+                        ),
+                        GestureDetector(
+                          onTap: (){
+                            Get.to(const FollowersScreen());
+                          },
+                          child: const Column(
+                            children: [
+                              Text(
+                                "1.3k",
+                                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                "Followers",
+                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          color: Colors.black54,
+                          width: 1,
+                          height: 15,
+                          margin: const EdgeInsets.symmetric(horizontal: 15),
+                        ),
+                        const Column(
+                          children: [
+                            Text(
+                              "12k",
+                              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                             SizedBox(
                               height: 5,
                             ),
                             Text(
                               "Following",
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.normal),
+                              style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),
                             ),
                           ],
                         ),
@@ -151,109 +193,98 @@ class _FeedScreenState extends State<FeedScreen> {
                           color: Colors.black54,
                           width: 1,
                           height: 15,
-                          margin: EdgeInsets.symmetric(horizontal: 15),
+                          margin: const EdgeInsets.symmetric(horizontal: 15),
                         ),
-                        Column(
-                          children: [
-                            Text(
-                              "1.3k",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text(
-                              "Followers",
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.normal),
-                            ),
-                          ],
-                        ),
-                        Container(
-                          color: Colors.black54,
-                          width: 1,
-                          height: 15,
-                          margin: EdgeInsets.symmetric(horizontal: 15),
-                        ),
-                        Column(
+                        const Column(
                           children: [
                             Text(
                               "12k",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
+                              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                             SizedBox(
                               height: 5,
                             ),
                             Text(
                               "Likes",
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.normal),
+                              style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),
                             ),
                           ],
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          width: 140,
-                          height: 47,
+                          padding: EdgeInsets.only(left: 30,right: 30),
+                          height: 40,
                           decoration: BoxDecoration(
                             color: Colors.pink[500],
+                            borderRadius: BorderRadius.circular(25)
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "Follow",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold),
+                              style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 20,right: 20),
+                          height: 40,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: AppTheme.primaryColor),
+                              borderRadius: BorderRadius.circular(25)
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "Message",
+                              style: TextStyle(color: AppTheme.primaryColor, fontSize: 15, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 10,),
+                        Container(
+                          width: 45,
+                          height: 47,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                              border: Border.all(color: AppTheme.lightColor)),
+                          child: const Center(child: Icon(Icons.camera_alt,color: AppTheme.primaryColor,)),
+                        ),
+                        const SizedBox(
                           width: 5,
                         ),
                         Container(
                           width: 45,
                           height: 47,
                           decoration: BoxDecoration(
-                              border: Border.all(color: Colors.black12)),
-                          child: Center(child: Icon(Icons.camera_alt)),
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Container(
-                          width: 35,
-                          height: 47,
-                          decoration: BoxDecoration(
-                              border: Border.all(color: Colors.black12)),
-                          child: Center(child: Icon(Icons.arrow_drop_down)),
+                            shape: BoxShape.circle,
+                              border: Border.all(color: AppTheme.lightColor)),
+                          child: const Center(child: Icon(Icons.arrow_drop_down,color: AppTheme.primaryColor,)),
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 25,
                     ),
                     Container(
                       height: 45,
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black12)),
+                      decoration: BoxDecoration(border: Border.all(color: Colors.black12)),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              Icon(Icons.menu),
-                              SizedBox(
+                              const Icon(Icons.menu),
+                              const SizedBox(
                                 height: 7,
                               ),
                               Container(
@@ -266,11 +297,11 @@ class _FeedScreenState extends State<FeedScreen> {
                           Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.favorite_border,
                                 color: Colors.black26,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 7,
                               ),
                               Container(
@@ -289,20 +320,16 @@ class _FeedScreenState extends State<FeedScreen> {
                           child: Container(
                             height: 160,
                             decoration: BoxDecoration(
-                                color: Colors.black26,
-                                border: Border.all(
-                                    color: Colors.white70, width: .5)),
+                                color: Colors.black26, border: Border.all(color: Colors.white70, width: .5)),
                             child: FittedBox(
                               child: CachedNetworkImage(
                                 fit: BoxFit.fill,
-                                imageUrl:
-                                    "https://media.giphy.com/media/tOueglJrk5rS8/giphy.gif",
-                                placeholder: (context, url) => Padding(
-                                  padding: const EdgeInsets.all(35.0),
+                                imageUrl: "https://media.giphy.com/media/tOueglJrk5rS8/giphy.gif",
+                                placeholder: (context, url) => const Padding(
+                                  padding: EdgeInsets.all(35.0),
                                   child: CircularProgressIndicator(),
                                 ),
-                                errorWidget: (context, url, error) =>
-                                    Icon(Icons.error),
+                                errorWidget: (context, url, error) => const Icon(Icons.error),
                               ),
                               fit: BoxFit.fill,
                             ),
@@ -312,20 +339,16 @@ class _FeedScreenState extends State<FeedScreen> {
                           child: Container(
                             height: 160,
                             decoration: BoxDecoration(
-                                color: Colors.black26,
-                                border: Border.all(
-                                    color: Colors.white70, width: .5)),
+                                color: Colors.black26, border: Border.all(color: Colors.white70, width: .5)),
                             child: FittedBox(
                               child: CachedNetworkImage(
                                 fit: BoxFit.fill,
-                                imageUrl:
-                                    "https://media.giphy.com/media/665IPY24jyWFa/giphy.gif",
-                                placeholder: (context, url) => Padding(
-                                  padding: const EdgeInsets.all(35.0),
+                                imageUrl: "https://media.giphy.com/media/665IPY24jyWFa/giphy.gif",
+                                placeholder: (context, url) => const Padding(
+                                  padding: EdgeInsets.all(35.0),
                                   child: CircularProgressIndicator(),
                                 ),
-                                errorWidget: (context, url, error) =>
-                                    Icon(Icons.error),
+                                errorWidget: (context, url, error) => const Icon(Icons.error),
                               ),
                               fit: BoxFit.fill,
                             ),
@@ -335,20 +358,16 @@ class _FeedScreenState extends State<FeedScreen> {
                           child: Container(
                             height: 160,
                             decoration: BoxDecoration(
-                                color: Colors.black26,
-                                border: Border.all(
-                                    color: Colors.white70, width: .5)),
+                                color: Colors.black26, border: Border.all(color: Colors.white70, width: .5)),
                             child: FittedBox(
                               child: CachedNetworkImage(
                                 fit: BoxFit.fill,
-                                imageUrl:
-                                    "https://media.giphy.com/media/chjX2ypYJKkr6/giphy.gif",
-                                placeholder: (context, url) => Padding(
-                                  padding: const EdgeInsets.all(35.0),
+                                imageUrl: "https://media.giphy.com/media/chjX2ypYJKkr6/giphy.gif",
+                                placeholder: (context, url) => const Padding(
+                                  padding: EdgeInsets.all(35.0),
                                   child: CircularProgressIndicator(),
                                 ),
-                                errorWidget: (context, url, error) =>
-                                    Icon(Icons.error),
+                                errorWidget: (context, url, error) => const Icon(Icons.error),
                               ),
                               fit: BoxFit.fill,
                             ),
@@ -362,20 +381,16 @@ class _FeedScreenState extends State<FeedScreen> {
                           child: Container(
                             height: 160,
                             decoration: BoxDecoration(
-                                color: Colors.black26,
-                                border: Border.all(
-                                    color: Colors.white70, width: .5)),
+                                color: Colors.black26, border: Border.all(color: Colors.white70, width: .5)),
                             child: FittedBox(
                               child: CachedNetworkImage(
                                 fit: BoxFit.fill,
-                                imageUrl:
-                                    "https://media.giphy.com/media/sC60eX0OVIH7O/giphy.gif",
-                                placeholder: (context, url) => Padding(
-                                  padding: const EdgeInsets.all(35.0),
+                                imageUrl: "https://media.giphy.com/media/sC60eX0OVIH7O/giphy.gif",
+                                placeholder: (context, url) => const Padding(
+                                  padding: EdgeInsets.all(35.0),
                                   child: CircularProgressIndicator(),
                                 ),
-                                errorWidget: (context, url, error) =>
-                                    Icon(Icons.error),
+                                errorWidget: (context, url, error) => const Icon(Icons.error),
                               ),
                               fit: BoxFit.fill,
                             ),
@@ -385,20 +400,16 @@ class _FeedScreenState extends State<FeedScreen> {
                           child: Container(
                             height: 160,
                             decoration: BoxDecoration(
-                                color: Colors.black26,
-                                border: Border.all(
-                                    color: Colors.white70, width: .5)),
+                                color: Colors.black26, border: Border.all(color: Colors.white70, width: .5)),
                             child: FittedBox(
                               child: CachedNetworkImage(
                                 fit: BoxFit.fill,
-                                imageUrl:
-                                    "https://media.giphy.com/media/NsXhybxnMKsh2/giphy.gif",
-                                placeholder: (context, url) => Padding(
-                                  padding: const EdgeInsets.all(35.0),
+                                imageUrl: "https://media.giphy.com/media/NsXhybxnMKsh2/giphy.gif",
+                                placeholder: (context, url) => const Padding(
+                                  padding: EdgeInsets.all(35.0),
                                   child: CircularProgressIndicator(),
                                 ),
-                                errorWidget: (context, url, error) =>
-                                    Icon(Icons.error),
+                                errorWidget: (context, url, error) => const Icon(Icons.error),
                               ),
                               fit: BoxFit.fill,
                             ),
@@ -408,20 +419,16 @@ class _FeedScreenState extends State<FeedScreen> {
                           child: Container(
                             height: 160,
                             decoration: BoxDecoration(
-                                color: Colors.black26,
-                                border: Border.all(
-                                    color: Colors.white70, width: .5)),
+                                color: Colors.black26, border: Border.all(color: Colors.white70, width: .5)),
                             child: FittedBox(
                               child: CachedNetworkImage(
                                 fit: BoxFit.fill,
-                                imageUrl:
-                                    "https://media.giphy.com/media/HE6hyf47yAX1S/giphy.gif",
-                                placeholder: (context, url) => Padding(
-                                  padding: const EdgeInsets.all(35.0),
+                                imageUrl: "https://media.giphy.com/media/HE6hyf47yAX1S/giphy.gif",
+                                placeholder: (context, url) => const Padding(
+                                  padding: EdgeInsets.all(35.0),
                                   child: CircularProgressIndicator(),
                                 ),
-                                errorWidget: (context, url, error) =>
-                                    Icon(Icons.error),
+                                errorWidget: (context, url, error) => const Icon(Icons.error),
                               ),
                               fit: BoxFit.fill,
                             ),
@@ -440,7 +447,7 @@ class _FeedScreenState extends State<FeedScreen> {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Expanded(child: currentScreen()),
-        BottomBar(),
+        const BottomBar(),
       ],
     );
   }
@@ -466,17 +473,14 @@ class _FeedScreenState extends State<FeedScreen> {
         ),
         SafeArea(
           child: Container(
-            padding: EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.only(top: 20),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Text('Following',
-                      style: TextStyle(
-                          fontSize: 17.0,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.white70)),
-                  SizedBox(
+                  const Text('Following',
+                      style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, color: Colors.white70)),
+                  const SizedBox(
                     width: 7,
                   ),
                   Container(
@@ -484,14 +488,11 @@ class _FeedScreenState extends State<FeedScreen> {
                     height: 10,
                     width: 1.0,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 7,
                   ),
-                  Text('For You',
-                      style: TextStyle(
-                          fontSize: 17.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white))
+                  const Text('For You',
+                      style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold, color: Colors.white))
                 ]),
           ),
         ),
@@ -508,7 +509,7 @@ class _FeedScreenState extends State<FeedScreen> {
       case 2:
         return SearchScreen();
       case 3:
-        return ProfileScreen();
+        return const ProfileScreen();
       default:
         return feedVideos();
     }
@@ -538,7 +539,7 @@ class _FeedScreenState extends State<FeedScreen> {
               )
             : Container(
                 color: Colors.black,
-                child: Center(
+                child: const Center(
                   child: Text("Loading"),
                 ),
               ),
@@ -554,7 +555,7 @@ class _FeedScreenState extends State<FeedScreen> {
                     "https://www.andersonsobelcosmetic.com/wp-content/uploads/2018/09/chin-implant-vs-fillers-best-for-improving-profile-bellevue-washington-chin-surgery.jpg"),
               ],
             ),
-            SizedBox(height: 20)
+            const SizedBox(height: 20)
           ],
         ),
       ],

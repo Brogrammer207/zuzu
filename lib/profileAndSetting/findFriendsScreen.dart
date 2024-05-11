@@ -92,7 +92,8 @@ class _FindFrindsScreenState extends State<FindFrindsScreen> {
                             'Find',
                             style: TextStyle(color: Colors.white),
                           ),
-                        ));
+                        )
+                    );
                   }),
               const SizedBox(
                 height: 10,
