@@ -1,12 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:zuzu/profileAndSetting/profileScreen.dart';
-
 import 'homeFeed/feed_screen.dart';
 import 'homeFeed/service_locator.dart';
-import 'inboxActivity/allActivityScreen.dart';
-import 'onBoarding/splash.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
