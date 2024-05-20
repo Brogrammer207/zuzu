@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "764888306052",
-    "project_id": "zuzu-af455",
-    "storage_bucket": "zuzu-af455.appspot.com"
+    "project_number": "551941545670",
+    "project_id": "tiktok-clone-kartik",
+    "storage_bucket": "tiktok-clone-kartik.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:764888306052:android:cd134abd9abf189df00dd1",
+        "mobilesdk_app_id": "1:551941545670:android:25e0ff433290c514ec41c7",
         "android_client_info": {
-          "package_name": "com.zuzu.zuzu"
+          "package_name": "com.tiktok"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB7KgenP7xKnRq6ep950fqBnNddt5l3uOo"
+          "current_key": "AIzaSyDUEf_6mpf72dG3VJLf054kq4rXfd3TUiI"
         }
       ],
       "services": {
