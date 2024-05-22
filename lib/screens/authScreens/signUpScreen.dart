@@ -33,7 +33,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.only(left: 15,right: 15),
+          margin: const EdgeInsets.only(left: 15,right: 15),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -89,7 +89,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               }),
                         ),
                       ),
-                      Text('Remember me',
+                      const Text('Remember me',
                           style: TextStyle(fontWeight: FontWeight.w300, fontSize: 13, color: Colors.black)),
                     ],
                   ),
@@ -174,7 +174,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             fontWeight: FontWeight.bold,
                           ),
                           recognizer: TapGestureRecognizer()..onTap = () {
-                            Get.to(SignInScreen());
+                            Get.back();
+                            // Get.to(()=> const SignInScreen());
                           })
                     ]),
               ),

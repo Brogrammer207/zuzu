@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:zuzu/screens/authScreens/signUpScreen.dart';
 import '../account_setup/chooseYourIntrest.dart';
 import '../forgetPassword/forgetPasswordScreen.dart';
 import '../widgets/apptheme.dart';
@@ -24,11 +23,11 @@ class _SignInScreenState extends State<SignInScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        // leading: const Icon(Icons.arrow_back_rounded),
-      ),
+          // leading: const Icon(Icons.arrow_back_rounded),
+          ),
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.only(left: 15,right: 15),
+          margin: const EdgeInsets.only(left: 15, right: 15),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -101,9 +100,11 @@ class _SignInScreenState extends State<SignInScreen> {
                   Get.to(const ChooseYourIntrestScreen());
                 },
               ),
-              const SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
               GestureDetector(
-                onTap: (){
+                onTap: () {
                   Get.to(const ForgetPasswordScreen());
                 },
                 child: const Text(
@@ -184,7 +185,10 @@ class _SignInScreenState extends State<SignInScreen> {
                             color: Colors.blue,
                             fontWeight: FontWeight.bold,
                           ),
-                          recognizer: TapGestureRecognizer()..onTap = () {})
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Get.to(() => const SignUpScreen());
+                            })
                     ]),
               ),
               const SizedBox(

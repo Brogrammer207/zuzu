@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../widgets/apptheme.dart';
 import '../widgets/commanButton.dart';
+import 'signInScreen.dart';
 import 'signUpScreen.dart';
 
 class LetsYouIN extends StatefulWidget {
@@ -101,20 +102,26 @@ class _LetsYouINState extends State<LetsYouIN> {
                 textColor: Colors.white,
                 color: AppTheme.primaryColor,
                 onPressed: () {
-              Get.to(const SignUpScreen());
+              Get.to(()=> const SignInScreen());
             }),
             const SizedBox(
               height: 30,
             ),
-            const Text.rich(
-              TextSpan(
-                children: [
-                  TextSpan(text: 'Dont have an Account? '),
-                  TextSpan(
-                    text: 'SignUp',
-                    style: TextStyle(fontWeight: FontWeight.bold, color: AppTheme.primaryColor),
-                  ),
-                ],
+            GestureDetector(
+              onTap: (){
+                Get.to(()=> const SignUpScreen());
+              },
+              behavior: HitTestBehavior.translucent,
+              child: const Text.rich(
+                TextSpan(
+                  children: [
+                    TextSpan(text: 'Dont have an Account? '),
+                    TextSpan(
+                      text: 'SignUp',
+                      style: TextStyle(fontWeight: FontWeight.bold, color: AppTheme.primaryColor),
+                    ),
+                  ],
+                ),
               ),
             ),
             const SizedBox(
