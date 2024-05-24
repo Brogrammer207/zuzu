@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:zuzu/discoverTranding/trandingHashTagScreen.dart';
-import 'package:zuzu/discoverTranding/trandingSoundScreen.dart';
+import 'package:zuzu/screens/discoverTranding/trandingHashTagScreen.dart';
+import 'package:zuzu/screens/discoverTranding/trandingSoundScreen.dart';
+
 
 import '../widgets/apptheme.dart';
 

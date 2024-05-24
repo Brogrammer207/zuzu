@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:zuzu/widgets/apptheme.dart';
+
+import '../screens/widgets/apptheme.dart';
 
 class PostSoundScreen extends StatefulWidget {
   const PostSoundScreen({super.key});

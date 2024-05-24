@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:zuzu/homeFeed/feed_screen.dart';
-import 'package:zuzu/homePageScreen.dart';
 
+
+import '../homeFeed/feed_screen.dart';
 import '../widgets/apptheme.dart';
 import '../widgets/commanButton.dart';
 

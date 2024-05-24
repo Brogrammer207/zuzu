@@ -4,8 +4,8 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:video_player/video_player.dart';
-import 'package:zuzu/widgets/apptheme.dart';
 
+import '../widgets/apptheme.dart';
 import '../widgets/commanButton.dart';
 
 class TrandingHashTagScreen extends StatefulWidget {

@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:zuzu/homeFeed/tik_tok_icons_icons.dart';
-import 'package:zuzu/homeFeed/useThisSoundScreen.dart';
+import 'package:zuzu/screens/homeFeed/useThisSoundScreen.dart';
+
 
 import '../widgets/apptheme.dart';
 import 'circle_image_animation.dart';

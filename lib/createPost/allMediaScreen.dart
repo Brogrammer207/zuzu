@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:zuzu/widgets/apptheme.dart';
 
-import '../widgets/commanButton.dart';
+import '../screens/widgets/apptheme.dart';
+import '../screens/widgets/commanButton.dart';
+
 
 class AllMediaScreen extends StatefulWidget {
   const AllMediaScreen({super.key});

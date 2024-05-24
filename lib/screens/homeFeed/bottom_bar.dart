@@ -6,12 +6,11 @@ import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
 import 'package:get_it/get_it.dart';
-import 'package:zuzu/discoverTranding/trandingScreen.dart';
-import 'package:zuzu/homeFeed/searchUsersScreen.dart';
-import 'package:zuzu/homeFeed/tik_tok_icons_icons.dart';
-import 'package:zuzu/inboxActivity/allActivityScreen.dart';
+import 'package:zuzu/screens/homeFeed/searchUsersScreen.dart';
 
-import '../createPost/createPostScreen.dart';
+import '../../createPost/createPostScreen.dart';
+import '../discoverTranding/trandingScreen.dart';
+import '../inboxActivity/allActivityScreen.dart';
 import '../profileAndSetting/profileScreen.dart';
 import 'feed_viewmodel.dart';
 import 'liveVideoScreen.dart';

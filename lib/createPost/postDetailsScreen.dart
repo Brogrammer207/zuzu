@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
-import '../widgets/apptheme.dart';
-import '../widgets/commanButton.dart';
+import '../screens/widgets/apptheme.dart';
+import '../screens/widgets/commanButton.dart';
+
 
 class PostDetailsScreen extends StatefulWidget {
   const PostDetailsScreen({super.key});
