@@ -42,7 +42,7 @@ class _QRCodeScreenState extends State<QRCodeScreen> {
                 width: 300,
               ),
               const Text(
-                '@Manish_prajapat',
+                '@Christopher_prajapat',
                 style: TextStyle(fontSize: 20, color: Colors.white),
               ),
               const SizedBox(

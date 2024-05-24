@@ -90,11 +90,11 @@ class _SearchTopUsersState extends State<SearchTopUsers> {
                                       backgroundImage: AssetImage( 'assets/images/girl.png',),
                                      ),
                                   title: const Text(
-                                    'Manish Prajapat',
+                                    'Christopher Prajapat',
                                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black),
                                   ),
                                   subtitle: const Text(
-                                    '@manishprajapat',
+                                    '@Christopherprajapat',
                                     style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey),
                                   ),
                                   trailing: GestureDetector(
@@ -236,11 +236,11 @@ class _SearchTopUsersState extends State<SearchTopUsers> {
                                   width: 20,
                                 )),
                             title: const Text(
-                              'Manish Prajapat',
+                              'Christopher Prajapat',
                               style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black),
                             ),
                             subtitle: const Text(
-                              '@manishprajapat',
+                              '@Christopherprajapat',
                               style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey),
                             ),
                             trailing: Container(
@@ -427,7 +427,7 @@ class _SearchTopUsersState extends State<SearchTopUsers> {
                                     color: AppTheme.primaryColor,
                                   )),
                               title: Text(
-                                'Manish Prajapat',
+                                'Christopher Prajapat',
                                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black),
                               ),
                               trailing: Text(

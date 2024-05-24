@@ -38,7 +38,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
         leading: const Icon(Icons.person_add_alt),
         title: Center(
           child: const Row(
-            children: [Text('Manish'), Icon(Icons.keyboard_arrow_down_outlined)],
+            children: [Text('Christopher'), Icon(Icons.keyboard_arrow_down_outlined)],
           ),
         ),
         centerTitle: true,
@@ -91,7 +91,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                 ],
               ),
               const Text(
-                '@Manish',
+                '@Christopher',
                 style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600, fontSize: 17),
               ),
               const Text(
@@ -238,12 +238,12 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                                     return ListTile(
                                       leading: Image.asset('assets/images/apple.png'),
                                       title: const Text(
-                                        'Manish Prajapat',
+                                        'Christopher Prajapat',
                                         style:
                                             TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black),
                                       ),
                                       subtitle: const Text(
-                                        '@manishprajapat',
+                                        '@Christopherprajapat',
                                         style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey),
                                       ),
                                       trailing: const Icon(

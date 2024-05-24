@@ -10,6 +10,7 @@ import 'package:zuzu/homeFeed/useThisSoundScreen.dart';
 
 import '../widgets/apptheme.dart';
 import 'circle_image_animation.dart';
+import 'feed_screen.dart';
 
 class ActionsToolbar extends StatelessWidget {
   static const double ActionWidgetSize = 60.0;
@@ -77,7 +78,7 @@ class ActionsToolbar extends StatelessWidget {
                                             minRadius: 20,
                                             backgroundImage: AssetImage('assets/images/girl.png')),
                                         title: Text(
-                                          'Manish Prajapat',
+                                          'Christopher Prajapat',
                                           style:
                                               TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black),
                                         ),
@@ -207,19 +208,24 @@ class ActionsToolbar extends StatelessWidget {
   Widget _getProfilePicture(userPic) {
     return Positioned(
         left: (ActionWidgetSize / 2) - (ProfileImageSize / 2),
-        child: Container(
-            padding: const EdgeInsets.all(1.0), // Add 1.0 point padding to create border
-            height: ProfileImageSize, // ProfileImageSize = 50.0;
-            width: ProfileImageSize, // ProfileImageSize = 50.0;
-            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(ProfileImageSize / 2)),
-            // import 'package:cached_network_image/cached_network_image.dart'; at the top to use CachedNetworkImage
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(10000.0),
-                child: CachedNetworkImage(
-                  imageUrl: userPic,
-                  placeholder: (context, url) => new CircularProgressIndicator(),
-                  errorWidget: (context, url, error) => new Icon(Icons.error),
-                ))));
+        child: GestureDetector(
+          onTap: (){
+
+          },
+          child: Container(
+              padding: const EdgeInsets.all(1.0), // Add 1.0 point padding to create border
+              height: ProfileImageSize, // ProfileImageSize = 50.0;
+              width: ProfileImageSize, // ProfileImageSize = 50.0;
+              decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(ProfileImageSize / 2)),
+              // import 'package:cached_network_image/cached_network_image.dart'; at the top to use CachedNetworkImage
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10000.0),
+                  child: CachedNetworkImage(
+                    imageUrl: userPic,
+                    placeholder: (context, url) => new CircularProgressIndicator(),
+                    errorWidget: (context, url, error) => new Icon(Icons.error),
+                  ))),
+        ));
   }
 
   LinearGradient get musicGradient => LinearGradient(

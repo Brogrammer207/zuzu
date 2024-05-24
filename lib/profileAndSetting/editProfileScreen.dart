@@ -92,7 +92,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     trailing: const Row(
                       mainAxisSize: MainAxisSize.min, // Set to minimize the width of the row
                       children: [
-                        Text('Manish Prajapat'),
+                        Text('Christopher Prajapat'),
                         SizedBox(width: 8), // Add some space between the text and icon
                         Icon(Icons.arrow_forward_ios_outlined, size: 20),
                       ],
@@ -134,7 +134,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     trailing: const Row(
                       mainAxisSize: MainAxisSize.min, // Set to minimize the width of the row
                       children: [
-                        Text('Manish Prajapat'),
+                        Text('Christopher Prajapat'),
                         SizedBox(width: 8), // Add some space between the text and icon
                         Icon(Icons.arrow_forward_ios_outlined, size: 20),
                       ],

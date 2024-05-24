@@ -47,7 +47,7 @@ class _ManageAccountScreenState extends State<ManageAccountScreen> {
               trailing: const Row(
                 mainAxisSize: MainAxisSize.min, // Set to minimize the width of the row
                 children: [
-                  Text('+manishprajapat207@gmail.com'),
+                  Text('+Christopherprajapat207@gmail.com'),
                   SizedBox(width: 8), // Add some space between the text and icon
                   Icon(Icons.arrow_forward_ios_outlined, size: 20),
                 ],

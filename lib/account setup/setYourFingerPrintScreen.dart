@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:zuzu/homeFeed/feed_screen.dart';
 import 'package:zuzu/homePageScreen.dart';
 
 import '../widgets/apptheme.dart';
@@ -84,11 +85,10 @@ class _SetYourFingerPrintScreenState extends State<SetYourFingerPrintScreen> {
                         context: context,
                         builder: (BuildContext context) {
                           return CustomDialog();
-
                         },
                       );
                       Timer(Duration(seconds: 3), () {
-                        Get.to(const HomePageScreen());
+                        Get.to(FeedScreen());
                       });
                       // Add your logic for button press
                     },
@@ -150,8 +150,7 @@ class CustomDialog extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-              const CircularProgressIndicator(
-              ),
+              const CircularProgressIndicator(),
               const SizedBox(height: 20),
             ],
           ),

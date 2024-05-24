@@ -157,7 +157,7 @@ class _UseThisSoundScreenState extends State<UseThisSoundScreen> {
                     backgroundImage: AssetImage('assets/images/girl.png'),
                   ),
                   title: const Text(
-                    'Manish Prajapat',
+                    'Christopher Prajapat',
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black),
                   ),
                   subtitle: const Text(

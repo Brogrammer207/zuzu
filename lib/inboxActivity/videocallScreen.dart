@@ -31,7 +31,7 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
             ),
             SizedBox(height: 100,),
             Text(
-              'Manisha Dain',
+              'Christophera Dain',
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600, color: Colors.black),
             ),
             Text(

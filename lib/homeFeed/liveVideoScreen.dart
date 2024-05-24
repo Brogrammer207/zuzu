@@ -267,11 +267,11 @@ class InstagramLiveScreen extends StatelessWidget {
                           child: const Column(
                             children: [
                               Text(
-                                'Manish Prajapat',
+                                'Christopher Prajapat',
                                 style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Colors.white),
                               ),
                               Text(
-                                '@manishprajapat',
+                                '@Christopherprajapat',
                                 style: TextStyle(fontSize: 10, fontWeight: FontWeight.w300, color: Colors.grey),
                               ),
                             ],
@@ -337,12 +337,12 @@ class InstagramLiveScreen extends StatelessWidget {
                                               return ListTile(
                                                 leading: Image.asset('assets/images/apple.png'),
                                                 title: const Text(
-                                                  'Manish Prajapat',
+                                                  'Christopher Prajapat',
                                                   style:
                                                   TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black),
                                                 ),
                                                 subtitle: const Text(
-                                                  '@manishprajapat',
+                                                  '@Christopherprajapat',
                                                   style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey),
                                                 ),
                                                 trailing: Container(
@@ -410,11 +410,11 @@ class InstagramLiveScreen extends StatelessWidget {
                                                   return ListTile(
                                                     leading: Image.asset('assets/images/apple.png'),
                                                     title: const Text(
-                                                      'Manish Prajapat',
+                                                      'Christopher Prajapat',
                                                       style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black),
                                                     ),
                                                     subtitle: const Text(
-                                                      '@manishprajapat',
+                                                      '@Christopherprajapat',
                                                       style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey),
                                                     ),
                                                     trailing: Container(
@@ -516,11 +516,11 @@ class InstagramLiveScreen extends StatelessWidget {
                                   width: 20,
                                 )),
                             title: const Text(
-                              'Manish Prajapat',
+                              'Christopher Prajapat',
                               style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.white),
                             ),
                             subtitle: const Text(
-                              '@manishprajapat',
+                              '@Christopherprajapat',
                               style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey),
                             ),
                           );
@@ -605,12 +605,12 @@ class InstagramLiveScreen extends StatelessWidget {
                                           return ListTile(
                                             leading: Image.asset('assets/images/apple.png'),
                                             title: const Text(
-                                              'Manish Prajapat',
+                                              'Christopher Prajapat',
                                               style:
                                               TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black),
                                             ),
                                             subtitle: const Text(
-                                              '@manishprajapat',
+                                              '@Christopherprajapat',
                                               style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey),
                                             ),
                                             trailing: Container(
@@ -702,7 +702,7 @@ class InstagramLiveScreen extends StatelessWidget {
                                           return ListTile(
                                             leading: Image.asset('assets/images/apple.png'),
                                             title: const Text(
-                                              'Manish Prajapat',
+                                              'Christopher Prajapat',
                                               style:
                                               TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black),
                                             ),

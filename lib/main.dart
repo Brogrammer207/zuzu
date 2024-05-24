@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:zuzu/profileAndSetting/profileScreen.dart';
 
+import 'createPost/allMediaScreen.dart';
+import 'createPost/postDetailsScreen.dart';
+import 'createPost/postSoundScreen.dart';
+import 'discoverTranding/trandingHashTagScreen.dart';
+import 'discoverTranding/trandingScreen.dart';
 import 'homeFeed/feed_screen.dart';
 import 'homeFeed/service_locator.dart';
 import 'inboxActivity/allActivityScreen.dart';
@@ -27,7 +32,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: FeedScreen(),
+      home: const  SplashScreen(),
     );
   }
 }

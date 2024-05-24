@@ -77,11 +77,11 @@ class _FindFrindsScreenState extends State<FindFrindsScreen> {
                               width: 20,
                             )),
                         title: const Text(
-                          'Manish Prajapat',
+                          'Christopher Prajapat',
                           style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black),
                         ),
                         subtitle: const Text(
-                          '@manishprajapat',
+                          '@Christopherprajapat',
                           style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey),
                         ),
                         trailing: Container(
@@ -121,11 +121,11 @@ class _FindFrindsScreenState extends State<FindFrindsScreen> {
                               width: 20,
                             )),
                         title: const Text(
-                          'Manish Prajapat',
+                          'Christopher Prajapat',
                           style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black),
                         ),
                         subtitle: const Text(
-                          '@manishprajapat',
+                          '@Christopherprajapat',
                           style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey),
                         ),
                         trailing: Container(
