@@ -1,21 +1,16 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:zuzu/profileAndSetting/profileScreen.dart';
+import 'package:zuzu/firebase_options.dart';
 
-import 'createPost/allMediaScreen.dart';
-import 'createPost/postDetailsScreen.dart';
-import 'createPost/postSoundScreen.dart';
-import 'discoverTranding/trandingHashTagScreen.dart';
-import 'discoverTranding/trandingScreen.dart';
-import 'homeFeed/feed_screen.dart';
-import 'homeFeed/service_locator.dart';
-import 'inboxActivity/allActivityScreen.dart';
-import 'onBoarding/splash.dart';
+import 'screens/homeFeed/service_locator.dart';
+import 'screens/onBoarding/splash.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform
+  );
   setup();
   runApp(const MyApp());
 }
@@ -32,7 +27,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const  SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }
