@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,15 +25,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -51,7 +42,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDUEf_6mpf72dG3VJLf054kq4rXfd3TUiI',
-    appId: '1:551941545670:android:25e0ff433290c514ec41c7',
+    appId: '1:551941545670:android:43ed0eae9624f78aec41c7',
     messagingSenderId: '551941545670',
     projectId: 'tiktok-clone-kartik',
     storageBucket: 'tiktok-clone-kartik.appspot.com',
@@ -63,6 +54,36 @@ class DefaultFirebaseOptions {
     messagingSenderId: '551941545670',
     projectId: 'tiktok-clone-kartik',
     storageBucket: 'tiktok-clone-kartik.appspot.com',
+    iosClientId: '551941545670-kns9kb6948d8kfcslgqldfmcdve1rj6p.apps.googleusercontent.com',
     iosBundleId: 'com.zuzu.zuzu',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyCI7rbBDDYVBLhDCZEOPVY37S8aO6DMvso',
+    appId: '1:551941545670:web:adf43a6b90ed0f2bec41c7',
+    messagingSenderId: '551941545670',
+    projectId: 'tiktok-clone-kartik',
+    authDomain: 'tiktok-clone-kartik.firebaseapp.com',
+    storageBucket: 'tiktok-clone-kartik.appspot.com',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyBW1SO3-lbXf9v9kCqhqZykTQJ5OVDZx2k',
+    appId: '1:551941545670:ios:e61401f92f7995f5ec41c7',
+    messagingSenderId: '551941545670',
+    projectId: 'tiktok-clone-kartik',
+    storageBucket: 'tiktok-clone-kartik.appspot.com',
+    iosClientId: '551941545670-kns9kb6948d8kfcslgqldfmcdve1rj6p.apps.googleusercontent.com',
+    iosBundleId: 'com.zuzu.zuzu',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyCI7rbBDDYVBLhDCZEOPVY37S8aO6DMvso',
+    appId: '1:551941545670:web:342985a662698319ec41c7',
+    messagingSenderId: '551941545670',
+    projectId: 'tiktok-clone-kartik',
+    authDomain: 'tiktok-clone-kartik.firebaseapp.com',
+    storageBucket: 'tiktok-clone-kartik.appspot.com',
+  );
+
 }

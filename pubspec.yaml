@@ -44,9 +44,19 @@ dependencies:
   get_it: ^7.7.0
   stacked: ^3.4.2
   cached_network_image: ^3.3.1
-  firebase_core: ^2.31.0
-  cloud_firestore: ^4.17.3
+  firebase_core: ^2.31.1
+  cloud_firestore: ^4.17.4
   share_plus: ^9.0.0
+  firebase_auth: ^4.19.6
+  http: ^1.2.1
+  shared_preferences: ^2.2.3
+  file_picker: ^8.0.3
+  image_picker: ^1.1.1
+  flutter_exif_rotation: ^0.5.1
+  loading_animation_widget: ^1.2.1
+  fluttertoast: ^8.2.5
+  flutter_animate: ^4.5.0
+  google_sign_in: ^6.2.1
 
 dev_dependencies:
   flutter_test:

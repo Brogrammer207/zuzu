@@ -8,7 +8,7 @@ class CommonButton extends StatefulWidget {
   final Color color;
   final Color textColor;
 
-  const CommonButton({
+  const CommonButton({super.key,
     required this.text,
     required this.onPressed,
     required this.color,
@@ -44,7 +44,7 @@ class LetsYouInContainer extends StatelessWidget {
   final String imagePath;
   final VoidCallback onPressed;
 
-  const LetsYouInContainer({
+  const LetsYouInContainer({super.key,
     required this.text,
     required this.imagePath,
     required this.onPressed,

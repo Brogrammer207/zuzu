@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../firebase/firebase_authentication.dart';
 import '../widgets/apptheme.dart';
 import '../widgets/commanButton.dart';
 import 'signInScreen.dart';
@@ -50,13 +51,15 @@ class _LetsYouINState extends State<LetsYouIN> {
               text: 'Continue with Facebook',
               imagePath: 'assets/images/facebook.png',
               onPressed: () {
-
               },
             ),
             LetsYouInContainer(
               text: 'Continue with Google',
               imagePath: 'assets/images/google.png',
               onPressed: () {
+                FirebaseAuthentication.signInWithGoogle(context).then((v){
+
+                });
                 // Handle Facebook button press
               },
             ),
