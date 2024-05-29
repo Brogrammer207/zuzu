@@ -45,7 +45,8 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
-            child: InkWell(
+            child: GestureDetector(
+      behavior: HitTestBehavior.translucent,
                 onTap: () {
                   Get.to(const SettingScreen());
                 },
@@ -107,7 +108,8 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                     width: 20,
                   ),
                   Expanded(
-                    child: InkWell(
+                    child: GestureDetector(
+      behavior: HitTestBehavior.translucent,
                       onTap: () {
                         Get.to(const FindFrindsScreen());
                       },
@@ -208,7 +210,8 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
               const SizedBox(
                 height: 20,
               ),
-              InkWell(
+              GestureDetector(
+      behavior: HitTestBehavior.translucent,
                 onTap: () {
                   showModalBottomSheet(
                     context: context,

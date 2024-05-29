@@ -52,15 +52,16 @@ class LetsYouInContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
-      padding: const EdgeInsets.only(top: 8, bottom: 8),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(11),
-        border: Border.all(color: Colors.grey.shade300, width: 1),
-      ),
-      child: InkWell(
-        onTap: onPressed,
+    return GestureDetector(
+      behavior: HitTestBehavior.translucent,
+      onTap: onPressed,
+      child: Container(
+        margin: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+        padding: const EdgeInsets.only(top: 8, bottom: 8),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(11),
+          border: Border.all(color: Colors.grey.shade300, width: 1),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 import '../widgets/apptheme.dart';
 import '../widgets/commanButton.dart';
@@ -14,6 +15,7 @@ class WhenIsYourBirthdayScreen extends StatefulWidget {
 }
 
 class _WhenIsYourBirthdayScreenState extends State<WhenIsYourBirthdayScreen> {
+  final TextEditingController dateController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,41 +28,65 @@ class _WhenIsYourBirthdayScreenState extends State<WhenIsYourBirthdayScreen> {
         title: const Text('When is your Birthday ?'),
       ),
       body: SingleChildScrollView(
-        child: Container(
-          margin: const EdgeInsets.only(left: 15, right: 15),
-          child: Column(
-            children: [
-              const Text(
-                'Your Birthday will not be show to the public',
-                style: TextStyle(color: Colors.black),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-             Image.asset('assets/images/cake.png',height: 200,),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                height: 50,
-                padding: const EdgeInsets.only(left: 10,right: 10),
-                decoration: BoxDecoration(color: Colors.grey.shade300,borderRadius: BorderRadius.circular(4)),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('12/27/1995'),
-                    Icon(Icons.date_range)
-                  ],
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 20
+        ),
+        child: Column(
+          children: [
+            const Text(
+              'Your Birthday will not be show to the public',
+              style: TextStyle(color: Colors.black),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+           Image.asset('assets/images/cake.png',height: 200,),
+            const SizedBox(
+              height: 40,
+            ),
+            TextFormField(
+              controller: dateController,
+              decoration: InputDecoration(
+                fillColor: Colors.grey.shade100,
+                hintText: "Pick Date",
+                filled: true,
+                suffixIcon: const Icon(Icons.date_range),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide.none
                 ),
-              )
-            ],
-          ),
+                enabled: true,
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide.none
+                )
+              ),
+            ),
+            SizedBox(
+              height: context.width*.5,
+              width: context.width,
+              child: CupertinoDatePicker(
+                mode: CupertinoDatePickerMode.date,
+                maximumYear: DateTime.now().year,
+                maximumDate: DateTime.now(),
+                initialDateTime: DateTime(2000),
+                onDateTimeChanged: (DateTime date) {
+                  dateController.text = DateFormat("dd/MM/yyyy").format(date);
+                  // setState(() {
+                  //   _selectedDate = date;
+                  // });
+                },
+              ),
+            )
+          ],
         ),
       ),
-      bottomNavigationBar: SizedBox(
-        width: double.infinity,
+      bottomNavigationBar: SafeArea(
         child: Padding(
-            padding: const EdgeInsets.all(15.0).copyWith(bottom: 10),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16
+            ),
             child: Row(
               children: [
                 Expanded(

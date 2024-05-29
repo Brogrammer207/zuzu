@@ -15,6 +15,15 @@ String deviceId = "";
 
 class Repositories {
   static String userInfo = 'user_info';
+  /// Notes....
+  /// Login :
+  /// Google login 2
+  /// Apple login 3
+  /// OTP : 1
+
+
+
+
   // Future assignDeviceToken() async {
   //   try {
   //     await ClientInformation.fetch().then((value) {
@@ -130,7 +139,7 @@ class Repositories {
     bool? showResponse = true,
     bool? returnResponse = false,
     bool? saveToLocal = false,
-    dynamic mapData,
+    Map<String, dynamic>? mapData,
   }) async {
     OverlayEntry loader = Helper.overlayLoader(context);
     if (context != null) {
@@ -149,12 +158,16 @@ class Repositories {
         // if (model.authToken != null) HttpHeaders.authorizationHeader: 'Bearer ${model.authToken}'
       };
 
+      Uri uri = Uri.parse(url).replace(
+        queryParameters: mapData
+      );
+
       if (kDebugMode) {
-        log("API Url.....  $url");
+        log("API Url.....  $uri");
         log("API headers.....  $headers");
       }
 
-      http.Response response = await http.get(Uri.parse(url), headers: headers);
+      http.Response response = await http.get(uri, headers: headers);
 
       if (kDebugMode) {
         if (showResponse == true) {

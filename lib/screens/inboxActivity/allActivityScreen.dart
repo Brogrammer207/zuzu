@@ -31,7 +31,8 @@ class _AllActivityScreenState extends State<AllActivityScreen> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
-            child: InkWell(
+            child: GestureDetector(
+      behavior: HitTestBehavior.translucent,
               onTap: () {},
               child: const Icon(Icons.share),
             ),

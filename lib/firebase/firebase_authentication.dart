@@ -9,6 +9,8 @@ class FirebaseAuthentication {
   static Future<UserCredential> signInWithGoogle(BuildContext c) async {
     final loader = c.showLoader();
     try {
+      await FirebaseAuth.instance.signOut();
+      await GoogleSignIn().signOut();
       // Trigger the authentication flow
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 

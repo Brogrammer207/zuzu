@@ -1,11 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
 
-import '../widgets/apptheme.dart';
-import '../widgets/commanButton.dart';
+import '../../widgets/apptheme.dart';
+import '../../widgets/commanButton.dart';
 
 class LiveVideoScreen extends StatefulWidget {
   const LiveVideoScreen({super.key});
@@ -195,7 +193,7 @@ class InstagramLiveScreen extends StatelessWidget {
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
                                           Container(
-                                            padding: EdgeInsets.only(left: 30,right: 30),
+                                            padding: const EdgeInsets.only(left: 30,right: 30),
                                             height: 40,
                                             decoration: BoxDecoration(
                                                 color: Colors.pink[500],
@@ -212,7 +210,7 @@ class InstagramLiveScreen extends StatelessWidget {
                                             width: 5,
                                           ),
                                           Container(
-                                            padding: EdgeInsets.only(left: 20,right: 20),
+                                            padding: const EdgeInsets.only(left: 20,right: 20),
                                             height: 40,
                                             decoration: BoxDecoration(
                                                 border: Border.all(color: AppTheme.primaryColor),
@@ -225,7 +223,7 @@ class InstagramLiveScreen extends StatelessWidget {
                                               ),
                                             ),
                                           ),
-                                          SizedBox(width: 10,),
+                                          const SizedBox(width: 10,),
                                           Container(
                                             width: 45,
                                             height: 47,
@@ -278,7 +276,8 @@ class InstagramLiveScreen extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 6),
-                        InkWell(
+                        GestureDetector(
+      behavior: HitTestBehavior.translucent,
                           onTap: (){
                             showModalBottomSheet(
                               context: context,
@@ -373,7 +372,8 @@ class InstagramLiveScreen extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 6), // Add some spacing between the two containers
-                        InkWell(
+                        GestureDetector(
+      behavior: HitTestBehavior.translucent,
                           onTap: (){
                             showModalBottomSheet(
                               context: context,
@@ -387,10 +387,10 @@ class InstagramLiveScreen extends StatelessWidget {
                                     ),
                                     child: Column(
                                       children: [
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 10,
                                         ),
-                                        TabBar(
+                                        const TabBar(
                                           labelColor: Colors.black,
                                           unselectedLabelColor: Colors.grey,
                                           tabs: [
@@ -438,11 +438,11 @@ class InstagramLiveScreen extends StatelessWidget {
                                                     leading: Image.asset('assets/images/apple.png'),
                                                     title: Text(
                                                       'User $index',
-                                                      style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black),
+                                                      style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black),
                                                     ),
                                                     subtitle: Text(
                                                       '@user$index',
-                                                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey),
+                                                      style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey),
                                                     ),
                                                     trailing: Container(
                                                       padding: const EdgeInsets.only(left: 15, right: 15, top: 8, bottom: 8),
@@ -552,7 +552,8 @@ class InstagramLiveScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 16.0),
-                  InkWell(
+                  GestureDetector(
+      behavior: HitTestBehavior.translucent,
                     onTap: (){
                       showModalBottomSheet(
                         context: context,
@@ -583,14 +584,14 @@ class InstagramLiveScreen extends StatelessWidget {
                                     const SizedBox(
                                       height: 10,
                                     ),
-                              Divider(height: 1,color: Colors.grey,),
+                              const Divider(height: 1,color: Colors.grey,),
                                     const SizedBox(
                                       height: 10,
                                     ),
-                                    Align(
+                                    const Align(
                                       alignment: Alignment.topLeft,
                                       child: Padding(
-                                        padding: const EdgeInsets.only(left: 10),
+                                        padding: EdgeInsets.only(left: 10),
                                         child: Text(
                                           '532 guest requests',
                                           style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black),
@@ -624,8 +625,8 @@ class InstagramLiveScreen extends StatelessWidget {
                                             ),
                                           );
                                         }),
-                                    Divider(height: 1,),
-                                    SizedBox(height: 10,),
+                                    const Divider(height: 1,),
+                                    const SizedBox(height: 10,),
                                     CommonButton(
                                       text: 'Continue',
                                       textColor: Colors.white,
@@ -633,7 +634,7 @@ class InstagramLiveScreen extends StatelessWidget {
                                       onPressed: () {
                                       },
                                     ),
-                                    SizedBox(height: 10,),
+                                    const SizedBox(height: 10,),
                                   ],
                                 )),
                           );
@@ -649,7 +650,8 @@ class InstagramLiveScreen extends StatelessWidget {
                   const SizedBox(
                     width: 5,
                   ),
-                  InkWell(
+                  GestureDetector(
+      behavior: HitTestBehavior.translucent,
                     onTap: (){
                       showModalBottomSheet(
                         context: context,
@@ -680,14 +682,14 @@ class InstagramLiveScreen extends StatelessWidget {
                                     const SizedBox(
                                       height: 10,
                                     ),
-                                    Divider(height: 1,color: Colors.grey,),
+                                    const Divider(height: 1,color: Colors.grey,),
                                     const SizedBox(
                                       height: 10,
                                     ),
-                                    Align(
+                                    const Align(
                                       alignment: Alignment.topLeft,
                                       child: Padding(
-                                        padding: const EdgeInsets.only(left: 10),
+                                        padding: EdgeInsets.only(left: 10),
                                         child: Text(
                                           '532 questions from guest',
                                           style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black),
@@ -710,7 +712,7 @@ class InstagramLiveScreen extends StatelessWidget {
                                               'What is your favorite fruit ?',
                                               style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey),
                                             ),
-                                            trailing: Column(
+                                            trailing: const Column(
                                               mainAxisSize: MainAxisSize.min,
                                               children: [
                                                 Icon(Icons.heart_broken,color: AppTheme.primaryColor,),
@@ -719,8 +721,8 @@ class InstagramLiveScreen extends StatelessWidget {
                                             )
                                           );
                                         }),
-                                    Divider(height: 1,),
-                                    SizedBox(height: 10,),
+                                    const Divider(height: 1,),
+                                    const SizedBox(height: 10,),
                                     CommonButton(
                                       text: 'Continue',
                                       textColor: Colors.white,
@@ -728,7 +730,7 @@ class InstagramLiveScreen extends StatelessWidget {
                                       onPressed: () {
                                       },
                                     ),
-                                    SizedBox(height: 10,),
+                                    const SizedBox(height: 10,),
                                   ],
                                 )),
                           );

@@ -1,25 +1,22 @@
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/get_navigation.dart';
-
 import 'package:get_it/get_it.dart';
-import 'package:zuzu/screens/homeFeed/searchUsersScreen.dart';
 
-import '../../createPost/createPostScreen.dart';
-import '../discoverTranding/trandingScreen.dart';
-import '../inboxActivity/allActivityScreen.dart';
-import '../profileAndSetting/profileScreen.dart';
+import '../../../createPost/createPostScreen.dart';
+import '../../discoverTranding/trandingScreen.dart';
+import '../../inboxActivity/allActivityScreen.dart';
+import '../../profileAndSetting/profileScreen.dart';
 import 'feed_viewmodel.dart';
 import 'liveVideoScreen.dart';
+import 'searchUsersScreen.dart';
 
 class BottomBar extends StatelessWidget {
   static const double NavigationIconSize = 20.0;
   static const double CreateButtonWidth = 38.0;
 
-  const BottomBar({Key? key}) : super(key: key);
+  const BottomBar({super.key});
 
   Widget get customCreateIcon => PopupMenuButton<String>(
     itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[

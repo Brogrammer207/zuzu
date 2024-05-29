@@ -238,7 +238,7 @@ class Helper {
               },
             ),
         ],
-      ),
+      ).animate().flip().scale().fade(),
     );
   }
 }

@@ -13,6 +13,9 @@ class TellUsAboutYourSelfScreen extends StatefulWidget {
 }
 
 class _TellUsAboutYourSelfScreenState extends State<TellUsAboutYourSelfScreen> {
+
+  bool isMale = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,65 +25,84 @@ class _TellUsAboutYourSelfScreenState extends State<TellUsAboutYourSelfScreen> {
               Get.back();
             },
             child: const Icon(Icons.arrow_back)),
-        title: const Text('Choose Your Interest'),
+        title: const Text('Tell us about yourself'),
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          margin: const EdgeInsets.only(left: 15, right: 15),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 20
+        ),
+        child: SafeArea(
           child: Column(
             children: [
               const Text(
                 'Choose Your identity & help us to find accurate content for you',
                 style: TextStyle(color: Colors.black),
               ),
-              const SizedBox(
-                height: 100,
-              ),
-              const CircleAvatar(
-                maxRadius: 80,
-                minRadius: 80,
-                backgroundColor: AppTheme.primaryColor,
+              Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Icon(
-                      Icons.male,
-                      size: 70,
-                      color: Colors.white,
+                    GestureDetector(
+                      onTap: (){
+                        isMale= true;
+                        setState(() {});
+                      },
+                      child: CircleAvatar(
+                        maxRadius: 80,
+                        minRadius: 80,
+                        backgroundColor: isMale ? AppTheme.primaryColor : Colors.grey.shade400,
+                        child: const Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.male,
+                              size: 70,
+                              color: Colors.white,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Male',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                    SizedBox(
-                      height: 5,
+                    const SizedBox(
+                      height: 20,
                     ),
-                    Text(
-                      'Male',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              CircleAvatar(
-                maxRadius: 80,
-                minRadius: 80,
-                backgroundColor: Colors.grey.shade400,
-                child: const Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.female,
-                      size: 70,
-                      color: Colors.white,
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      'Female',
-                      style: TextStyle(color: Colors.white),
+                    GestureDetector(
+                      onTap: (){
+                        isMale= false;
+                        setState(() {});
+                      },
+                      child: CircleAvatar(
+                        maxRadius: 80,
+                        minRadius: 80,
+                        backgroundColor: isMale ? Colors.grey.shade400 : AppTheme.primaryColor,
+                        child: const Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.female,
+                              size: 70,
+                              color: Colors.white,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Female',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -89,10 +111,11 @@ class _TellUsAboutYourSelfScreenState extends State<TellUsAboutYourSelfScreen> {
           ),
         ),
       ),
-      bottomNavigationBar: SizedBox(
-        width: double.infinity,
+      bottomNavigationBar: SafeArea(
         child: Padding(
-            padding: const EdgeInsets.all(15.0).copyWith(bottom: 10),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16
+            ),
             child: Row(
               children: [
                 Expanded(
@@ -111,7 +134,7 @@ class _TellUsAboutYourSelfScreenState extends State<TellUsAboutYourSelfScreen> {
                     color: AppTheme.primaryColor,
                     textColor: Colors.white,
                     onPressed: () {
-                      Get.to(const WhenIsYourBirthdayScreen());
+                      Get.to(()=>const WhenIsYourBirthdayScreen());
                       // Add your logic for button press
                     },
                   ),

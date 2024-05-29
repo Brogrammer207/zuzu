@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
 
-import '../widgets/apptheme.dart';
-import '../widgets/commanButton.dart';
+import '../../widgets/apptheme.dart';
+import '../../widgets/commanButton.dart';
 
 class UseThisSoundScreen extends StatefulWidget {
   const UseThisSoundScreen({super.key});

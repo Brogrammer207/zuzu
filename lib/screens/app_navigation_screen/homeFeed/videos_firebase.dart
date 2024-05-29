@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'demo_data.dart';
 import 'video.dart';
@@ -16,17 +16,17 @@ class VideosAPI {
   }
 
   Future<List<Video>> getVideoList() async {
-    var data = await FirebaseFirestore.instance.collection("Videos").get();
+    // var data = await FirebaseFirestore.instance.collection("Videos").get();
 
     var videoList = <Video>[];
     var videos;
 
-    if (data.docs.length == 0) {
-      await addDemoData();
-      videos = (await FirebaseFirestore.instance.collection("Videos").get());
-    } else {
-      videos = data;
-    }
+    // if (data.docs.length == 0) {
+    //   await addDemoData();
+    //   videos = (await FirebaseFirestore.instance.collection("Videos").get());
+    // } else {
+    //   videos = data;
+    // }
 
     videos.docs.forEach((element) {
       Video video = Video.fromJson(element.data());
@@ -38,7 +38,7 @@ class VideosAPI {
 
   Future<Null> addDemoData() async {
     for (var video in data) {
-      await FirebaseFirestore.instance.collection("Videos").add(video);
+      // await FirebaseFirestore.instance.collection("Videos").add(video);
     }
   }
 }

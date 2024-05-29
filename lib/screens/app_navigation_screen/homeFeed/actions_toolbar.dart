@@ -5,12 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:zuzu/screens/homeFeed/useThisSoundScreen.dart';
 
-
-import '../widgets/apptheme.dart';
+import '../../widgets/apptheme.dart';
 import 'circle_image_animation.dart';
-import 'feed_screen.dart';
+import 'useThisSoundScreen.dart';
 
 class ActionsToolbar extends StatelessWidget {
   static const double ActionWidgetSize = 60.0;
@@ -150,7 +148,7 @@ class ActionsToolbar extends StatelessWidget {
         CircleImageAnimation(
           child: _getMusicPlayerAction(userPic),
           onpressed: (){
-            Get.to(UseThisSoundScreen());
+            Get.to(const UseThisSoundScreen());
           },
         )
       ]),

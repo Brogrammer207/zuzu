@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/apptheme.dart';
+import '../../widgets/apptheme.dart';
 
 class SearchTopUsers extends StatefulWidget {
   const SearchTopUsers({super.key});
@@ -82,7 +82,7 @@ class _SearchTopUsersState extends State<SearchTopUsers> {
                             physics: const NeverScrollableScrollPhysics(),
                             itemBuilder: (context, index) {
                               return ListTile(
-                                  leading: CircleAvatar(
+                                  leading: const CircleAvatar(
                                       minRadius: 30,
                                       maxRadius: 30,
                                       backgroundColor: AppTheme.lightColor,

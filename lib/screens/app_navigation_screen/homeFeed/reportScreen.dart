@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../widgets/apptheme.dart';
-import '../widgets/commanButton.dart';
+import '../../widgets/apptheme.dart';
+import '../../widgets/commanButton.dart';
 
 class ReportScreen extends StatefulWidget {
   const ReportScreen({super.key});
@@ -30,9 +30,9 @@ class _ReportScreenState extends State<ReportScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 15),
-              child: const Text(
+            const Padding(
+              padding: EdgeInsets.only(left: 15),
+              child: Text(
                 'Select A Reason',
                 style: TextStyle(color: Colors.black),
               ),
@@ -40,14 +40,14 @@ class _ReportScreenState extends State<ReportScreen> {
             ListView.builder(
               itemCount: 15,
                 shrinkWrap: true,
-                physics: AlwaysScrollableScrollPhysics(),
+                physics: const AlwaysScrollableScrollPhysics(),
                 itemBuilder: (context,index){
                  return Row(
                    children: [
                      Radio(value: 1, groupValue: 1,
-                         activeColor: Color(0xffff6178),
+                         activeColor: const Color(0xffff6178),
                          onChanged: (value){}),
-                     SizedBox(width: 5,),
+                     const SizedBox(width: 5,),
                      const Text(
                        'Select A Reason',
                        style: TextStyle(color: Colors.black),
@@ -68,7 +68,7 @@ class _ReportScreenState extends State<ReportScreen> {
                   child: CommonButton(
                     text: 'Cancel',
                     textColor: AppTheme.primaryColor,
-                    color: Color(0xffffedf0),
+                    color: const Color(0xffffedf0),
                     onPressed: () {
                       // Add your logic for button press
                     },

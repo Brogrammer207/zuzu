@@ -1,8 +1,14 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:zuzu/helper/helper.dart';
+import 'package:zuzu/repository/api_repo.dart';
+import 'package:zuzu/repository/api_urls.dart';
 
 import '../../firebase/firebase_authentication.dart';
+import '../../models/model_login_response.dart';
 import '../widgets/apptheme.dart';
 import '../widgets/commanButton.dart';
 import 'signInScreen.dart';
@@ -57,8 +63,25 @@ class _LetsYouINState extends State<LetsYouIN> {
               text: 'Continue with Google',
               imagePath: 'assets/images/google.png',
               onPressed: () {
-                FirebaseAuthentication.signInWithGoogle(context).then((v){
 
+                FirebaseAuthentication.signInWithGoogle(context).then((v) async {
+                  Repositories().postApi(url: ApiUrls.loginUrl,
+                  mapData: {
+                    'type': "2",
+                    'email': v.user!.email!,
+                    'mobile_number': v.user?.phoneNumber,
+                    'device_type': "1",
+                    'device_token': await FirebaseMessaging.instance.getToken(),
+                  },
+                    context: context
+                  ).then((v) async {
+                    ModelLoginResponse model = modelLoginResponseFromJson(v);
+                    showToast(model.message);
+                    if(model.status == 200){
+                      SharedPreferences sharedPref = await SharedPreferences.getInstance();
+                    sharedPref.setString(Repositories.userInfo, v);
+                    }
+                  });
                 });
                 // Handle Facebook button press
               },

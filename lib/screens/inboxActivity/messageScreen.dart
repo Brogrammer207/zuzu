@@ -25,11 +25,13 @@ class _MessageScreenState extends State<MessageScreen> {
         actions: [
          Padding(
             padding: const EdgeInsets.only(right: 8.0),
-            child: InkWell(onTap: () {}, child: const Icon(Icons.add_circle_outline_outlined)),
+            child: GestureDetector(
+      behavior: HitTestBehavior.translucent,onTap: () {}, child: const Icon(Icons.add_circle_outline_outlined)),
           ),
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
-            child: InkWell(onTap: () {}, child: const Icon(Icons.more_horiz)),
+            child: GestureDetector(
+      behavior: HitTestBehavior.translucent,onTap: () {}, child: const Icon(Icons.more_horiz)),
           ),
         ],
       ),

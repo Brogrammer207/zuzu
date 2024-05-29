@@ -3,9 +3,8 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-
-import '../homeFeed/feed_screen.dart';
+import '../app_navigation_screen/app_navigation_screen.dart';
+import '../app_navigation_screen/homeFeed/feed_screen.dart';
 import '../widgets/apptheme.dart';
 import '../widgets/commanButton.dart';
 
@@ -59,10 +58,11 @@ class _SetYourFingerPrintScreenState extends State<SetYourFingerPrintScreen> {
           ),
         ),
       ),
-      bottomNavigationBar: SizedBox(
-        width: double.infinity,
+      bottomNavigationBar: SafeArea(
         child: Padding(
-            padding: const EdgeInsets.all(15.0).copyWith(bottom: 10),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16
+            ),
             child: Row(
               children: [
                 Expanded(
@@ -81,16 +81,15 @@ class _SetYourFingerPrintScreenState extends State<SetYourFingerPrintScreen> {
                     textColor: Colors.white,
                     color: AppTheme.primaryColor,
                     onPressed: () {
+                      Future.delayed(3.seconds).then((v){
+                        Get.to(()=> const AppNavigationScreen());
+                      });
                       showDialog(
                         context: context,
                         builder: (BuildContext context) {
                           return CustomDialog();
                         },
                       );
-                      Timer(Duration(seconds: 3), () {
-                        Get.to(FeedScreen());
-                      });
-                      // Add your logic for button press
                     },
                   ),
                 )

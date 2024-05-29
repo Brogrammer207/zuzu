@@ -1,4 +1,3 @@
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -9,9 +8,8 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get_it/get_it.dart';
 import 'package:stacked/stacked.dart';
 import 'package:video_player/video_player.dart';
-
-import '../profileAndSetting/profileScreen.dart';
-import '../widgets/apptheme.dart';
+import '../../profileAndSetting/profileScreen.dart';
+import '../../widgets/apptheme.dart';
 import 'actions_toolbar.dart';
 import 'bottom_bar.dart';
 import 'feed_viewmodel.dart';
@@ -49,26 +47,22 @@ class _FeedScreenState extends State<FeedScreen> {
   Widget videoScreen() {
     return Scaffold(
       backgroundColor: GetIt.instance<FeedViewModel>().actualScreen == 0 ? Colors.black : Colors.white,
-      body: Stack(
-        children: [
-          PageView.builder(
-            itemCount: 2,
-            onPageChanged: (value) {
-              if (value == 1) {
-                SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
-              } else {
-                SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
-              }
-            },
-            itemBuilder: (context, index) {
-              if (index == 0) {
-                return scrollFeed();
-              } else {
-                return profileView();
-              }
-            },
-          )
-        ],
+      body: PageView.builder(
+        itemCount: 2,
+        onPageChanged: (value) {
+          if (value == 1) {
+            SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
+          } else {
+            SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+          }
+        },
+        itemBuilder: (context, index) {
+          if (index == 0) {
+            return scrollFeed();
+          } else {
+            return profileView();
+          }
+        },
       ),
     );
   }
@@ -150,7 +144,7 @@ class _FeedScreenState extends State<FeedScreen> {
                           margin: const EdgeInsets.symmetric(horizontal: 15),
                         ),
                         GestureDetector(
-                          onTap: (){
+                          onTap: () {
                             Get.to(const FollowersScreen());
                           },
                           child: const Column(
@@ -220,12 +214,9 @@ class _FeedScreenState extends State<FeedScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          padding: const EdgeInsets.only(left: 30,right: 30),
+                          padding: const EdgeInsets.only(left: 30, right: 30),
                           height: 40,
-                          decoration: BoxDecoration(
-                            color: Colors.pink[500],
-                            borderRadius: BorderRadius.circular(25)
-                          ),
+                          decoration: BoxDecoration(color: Colors.pink[500], borderRadius: BorderRadius.circular(25)),
                           child: const Center(
                             child: Text(
                               "Follow",
@@ -237,12 +228,11 @@ class _FeedScreenState extends State<FeedScreen> {
                           width: 5,
                         ),
                         Container(
-                          padding: const EdgeInsets.only(left: 20,right: 20),
+                          padding: const EdgeInsets.only(left: 20, right: 20),
                           height: 40,
                           decoration: BoxDecoration(
                               border: Border.all(color: AppTheme.primaryColor),
-                              borderRadius: BorderRadius.circular(25)
-                          ),
+                              borderRadius: BorderRadius.circular(25)),
                           child: const Center(
                             child: Text(
                               "Message",
@@ -250,14 +240,19 @@ class _FeedScreenState extends State<FeedScreen> {
                             ),
                           ),
                         ),
-                        const SizedBox(width: 10,),
+                        const SizedBox(
+                          width: 10,
+                        ),
                         Container(
                           width: 45,
                           height: 47,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                              border: Border.all(color: AppTheme.lightColor)),
-                          child: const Center(child: Icon(Icons.camera_alt,color: AppTheme.primaryColor,)),
+                          decoration:
+                              BoxDecoration(shape: BoxShape.circle, border: Border.all(color: AppTheme.lightColor)),
+                          child: const Center(
+                              child: Icon(
+                            Icons.camera_alt,
+                            color: AppTheme.primaryColor,
+                          )),
                         ),
                         const SizedBox(
                           width: 5,
@@ -265,10 +260,13 @@ class _FeedScreenState extends State<FeedScreen> {
                         Container(
                           width: 45,
                           height: 47,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                              border: Border.all(color: AppTheme.lightColor)),
-                          child: const Center(child: Icon(Icons.arrow_drop_down,color: AppTheme.primaryColor,)),
+                          decoration:
+                              BoxDecoration(shape: BoxShape.circle, border: Border.all(color: AppTheme.lightColor)),
+                          child: const Center(
+                              child: Icon(
+                            Icons.arrow_drop_down,
+                            color: AppTheme.primaryColor,
+                          )),
                         )
                       ],
                     ),

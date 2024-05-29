@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 
 import 'apptheme.dart';
 
-
 class CommonTextField extends StatefulWidget {
   final TextEditingController? controller;
   final FormFieldValidator<String>? validator;
@@ -34,8 +33,6 @@ class CommonTextField extends StatefulWidget {
     this.keyboardType = TextInputType.text,
     this.obSecure,
     this.contentPadding,
-
-
     this.onTap,
     this.isMulti = false,
     this.readOnly = false,
@@ -83,11 +80,10 @@ class _CommonTextFieldState extends State<CommonTextField> {
             fontSize: 25,
           ),
           counter: const Offstage(),
-
           errorMaxLines: 2,
           enabled: widget.enabled,
           contentPadding: widget.contentPadding,
-          fillColor: Colors.grey.shade200,
+          fillColor: Colors.grey.shade100,
           filled: true,
           hintText: widget.hintText,
           errorText: widget.errorText,
@@ -98,20 +94,22 @@ class _CommonTextFieldState extends State<CommonTextField> {
             color: AppTheme.secondaryColor,
             fontSize: 13,
           ),
-
           border: InputBorder.none,
-          focusedErrorBorder:  OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(8)), borderSide: BorderSide(color: Colors.grey.shade200)),
-          errorBorder:  OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(8)), borderSide: BorderSide(color: Colors.grey.shade200)),
-          focusedBorder:  OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(8)), borderSide: BorderSide(color: Colors.grey.shade200)),
-          disabledBorder:   OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8)),
+          focusedErrorBorder: OutlineInputBorder(
+              borderRadius: const BorderRadius.all(Radius.circular(8)),
+              borderSide: BorderSide(color: Colors.grey.shade200)),
+          errorBorder: OutlineInputBorder(
+              borderRadius: const BorderRadius.all(Radius.circular(8)),
+              borderSide: BorderSide(color: Colors.grey.shade200)),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: const BorderRadius.all(Radius.circular(8)),
+              borderSide: BorderSide(color: Colors.grey.shade200)),
+          disabledBorder: OutlineInputBorder(
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
             borderSide: BorderSide(color: Colors.grey.shade200),
           ),
-          enabledBorder:  OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8)),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
             borderSide: BorderSide(color: Colors.grey.shade200),
           ),
         ),

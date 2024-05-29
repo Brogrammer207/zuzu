@@ -24,7 +24,8 @@ class _FindFrindsScreenState extends State<FindFrindsScreen> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
-            child: InkWell(onTap: () {}, child: const Icon(Icons.qr_code_scanner_sharp)),
+            child: GestureDetector(
+      behavior: HitTestBehavior.translucent,onTap: () {}, child: const Icon(Icons.qr_code_scanner_sharp)),
           )
         ],
       ),
