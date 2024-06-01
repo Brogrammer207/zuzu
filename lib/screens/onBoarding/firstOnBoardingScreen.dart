@@ -89,17 +89,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               onPressed: () {
                 controller.nextPage(duration: const Duration(milliseconds: 300), curve: Curves.ease);
                 if (_pageIndex.value == 2) {
-                  Get.offAll(()=> const LetsYouIN());
+                  Get.offAll(() => const LetsYouIN());
                 }
               },
               style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xffff4d67),
                   textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
               child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 25,
-                  vertical: 16
-                ),
+                padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 16),
                 child: Text(
                   OnBoardingData[min(_pageIndex.value, OnBoardingData.length - 1)].buttonText.toString(),
                   style: const TextStyle(color: Colors.white),
@@ -144,7 +141,7 @@ class OnboardContent extends StatelessWidget {
   final String image, title, description, buttonText;
   final int indexValue;
 
-  OnboardContent(
+  const OnboardContent(
       {super.key,
       required this.image,
       required this.title,

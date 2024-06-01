@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:zuzu/firebase_options.dart';
+import 'screens/app_navigation_screen/app_navigation_screen.dart';
 import 'screens/app_navigation_screen/homeFeed/service_locator.dart';
 import 'screens/onBoarding/splash.dart';
 
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
           elevation: 0
         )
       ),
-      home: const SplashScreen(),
+      home: const AppNavigationScreen(),
     );
   }
 }

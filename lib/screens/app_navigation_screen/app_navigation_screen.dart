@@ -13,6 +13,9 @@ class _AppNavigationScreenState extends State<AppNavigationScreen> {
   int currentIndex = 0;
   List<Widget> homeWidgets = [
     const HomePage(),
+    const HomePage(),
+    const HomePage(),
+    const HomePage(),
   ];
   @override
   Widget build(BuildContext context) {

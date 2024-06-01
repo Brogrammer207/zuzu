@@ -38,13 +38,12 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
+    return AnimatedContainer(
+      color: _initialIndex == 0 ? Colors.black : Colors.white,
+      duration: 300.milliseconds,
       padding: const EdgeInsets.symmetric(
         horizontal: 10,
-      ).copyWith(
-        bottom: context.mediaQueryPadding.bottom
-      ),
+      ).copyWith(bottom: context.mediaQueryPadding.bottom),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -95,6 +94,9 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
           key: ValueKey(selected),
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            SizedBox(
+              height: 10,
+            ),
             Icon(
               icon,
               color: selected ? AppTheme.primaryColor : Colors.grey,

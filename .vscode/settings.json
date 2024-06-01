@@ -1,0 +1,23 @@
+{
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "explicitFolding.rules": {
+        "dart": [
+            {
+                "begin": "{",
+                "end": "}"
+            },
+            {
+                "begin": "'''",
+                "end": "'''"
+            },
+            {
+                "begin": "\"\"\"",
+                "end": "\"\"\""
+            },
+            {
+                "foldLastLine": true
+            }
+        ]
+    }
+}

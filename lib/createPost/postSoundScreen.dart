@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
 
 import '../screens/widgets/apptheme.dart';
 
@@ -19,16 +18,18 @@ class _PostSoundScreenState extends State<PostSoundScreen> {
       length: 2, // Number of tabs
       child: Scaffold(
         appBar: AppBar(
-          leading: Icon(Icons.cancel_outlined),
-          title: Center(
-            child: const Row(
+          leading: const Icon(Icons.cancel_outlined),
+          title: const Center(
+            child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [Text('Sound'), Icon(Icons.keyboard_arrow_down_outlined)],
             ),
           ),
-          actions: [
+          actions: const [
             Icon(Icons.more_horiz),
-            SizedBox(width: 10,)
+            SizedBox(
+              width: 10,
+            )
           ],
         ),
         body: Column(
@@ -87,8 +88,8 @@ class _PostSoundScreenState extends State<PostSoundScreen> {
                                 borderRadius: BorderRadius.circular(11),
                                 image: const DecorationImage(
                                     image: AssetImage(
-                                      'assets/images/girl.png',
-                                    ))),
+                                  'assets/images/girl.png',
+                                ))),
                           ),
                           title: const Text(
                             'Side to Side',

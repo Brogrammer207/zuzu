@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
-
-import '../app_navigation_screen/homeFeed/actions_toolbar.dart';
-import '../app_navigation_screen/homeFeed/video.dart';
-import '../app_navigation_screen/homeFeed/video_description.dart';
+import 'package:zuzu/repository/api_urls.dart';
+import '../videos_manager/video_player_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,24 +10,28 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final PageController pageController = PageController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Stack(
         children: [
           PageView.builder(
-            controller: PageController(
-              initialPage: 0,
-              viewportFraction: 1,
-            ),
-            itemCount: 0,
+            controller: pageController,
+            itemCount: DemoVideosList.videosUrls.length,
             onPageChanged: (index) {
-              // index = index % (feedViewModel.videoSource!.listVideos.length);
-              // feedViewModel.changeVideo(index);
+              print("Page Changed......     ");
             },
             scrollDirection: Axis.vertical,
             itemBuilder: (context, index) {
-              return SizedBox();
+              final item = DemoVideosList.videosUrls[index];
+              return VideoPlayerWidget(
+                videoUrl: item,
+                videoIndex: index,
+                branchName: "For_You",
+              );
               // index = index % (feedViewModel.videoSource!.listVideos.length);
               // return videoCard("feedViewModel.videoSource!.listVideos[index]");
             },
@@ -43,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     const Text('Following',
-                        style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, color: Colors.white70)),
+                        style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.normal, color: Colors.white)),
                     const SizedBox(
                       width: 7,
                     ),
@@ -56,58 +57,12 @@ class _HomePageState extends State<HomePage> {
                       width: 7,
                     ),
                     const Text('For You',
-                        style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold, color: Colors.white))
+                        style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.white))
                   ]),
             ),
           ),
         ],
       ),
-    );
-  }
-  Widget videoCard(Video video) {
-    return Stack(
-      children: [
-        video.controller != null
-            ? GestureDetector(
-          onTap: () {
-            if (video.controller!.value.isPlaying) {
-              video.controller?.pause();
-            } else {
-              video.controller?.play();
-            }
-          },
-          child: SizedBox.expand(
-              child: FittedBox(
-                fit: BoxFit.cover,
-                child: SizedBox(
-                  width: video.controller?.value.size.width ?? 0,
-                  height: video.controller?.value.size.height ?? 0,
-                  child: VideoPlayer(video.controller!),
-                ),
-              )),
-        )
-            : Container(
-          color: Colors.black,
-          child: const Center(
-            child: Text("Loading"),
-          ),
-        ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: <Widget>[
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
-                VideoDescription(video.user, video.videoTitle, video.songName),
-                ActionsToolbar(video.likes, video.comments,
-                    "https://www.andersonsobelcosmetic.com/wp-content/uploads/2018/09/chin-implant-vs-fillers-best-for-improving-profile-bellevue-washington-chin-surgery.jpg"),
-              ],
-            ),
-            const SizedBox(height: 20)
-          ],
-        ),
-      ],
     );
   }
 }

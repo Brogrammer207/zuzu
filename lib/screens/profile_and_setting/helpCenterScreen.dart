@@ -1,23 +1,19 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../widgets/apptheme.dart';
 
 class HelpCenterScreen extends StatefulWidget {
-  const HelpCenterScreen({Key? key}) : super(key: key);
+  const HelpCenterScreen({super.key});
 
   @override
   State<HelpCenterScreen> createState() => _HelpCenterScreenState();
 }
 
 class _HelpCenterScreenState extends State<HelpCenterScreen> with SingleTickerProviderStateMixin {
-  TabController? _tabController;
-
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
   }
 
   @override
@@ -111,22 +107,27 @@ class _HelpCenterScreenState extends State<HelpCenterScreen> with SingleTickerPr
             ),
             SingleChildScrollView(
               child: Container(
-                margin: EdgeInsets.only(left: 15,right: 15),
+                margin: EdgeInsets.only(left: 15, right: 15),
                 child: Column(
                   children: [
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Container(
-                      padding: EdgeInsets.only(left: 15, right: 15,top: 15,bottom: 15),
+                      padding: EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 15),
                       margin: EdgeInsets.only(right: 5),
                       decoration: BoxDecoration(
                         color: Colors.black.withOpacity(.10),
-                          borderRadius: BorderRadius.circular(11),),
+                        borderRadius: BorderRadius.circular(11),
+                      ),
                       child: Row(
                         children: [
                           Center(
                               child: const Text(
                             'Customer Serivce',
-                            style: TextStyle(color: Colors.black,),
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
                           )),
                         ],
                       ),
