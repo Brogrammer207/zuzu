@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../account_setup/setYourFingerPrintScreen.dart';
 import '../widgets/apptheme.dart';
 import '../widgets/commanButton.dart';
-import '../widgets/commanTextFromField.dart';
+import '../widgets/comman_text_from_field.dart';
 
 class CreateNewPasswordScreen extends StatefulWidget {
   const CreateNewPasswordScreen({super.key});

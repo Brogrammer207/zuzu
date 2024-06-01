@@ -7,7 +7,7 @@ import 'package:get_it/get_it.dart';
 import '../../../createPost/createPostScreen.dart';
 import '../../discoverTranding/trandingScreen.dart';
 import '../../inboxActivity/allActivityScreen.dart';
-import '../../profileAndSetting/profileScreen.dart';
+import '../../profile_and_setting/profileScreen.dart';
 import 'feed_viewmodel.dart';
 import 'liveVideoScreen.dart';
 import 'searchUsersScreen.dart';
@@ -40,7 +40,7 @@ class BottomBar extends StatelessWidget {
           break;
       }
     },
-    child: Container(
+    child: SizedBox(
       width: 45.0,
       height: 27.0,
       child: Stack(
@@ -88,10 +88,10 @@ class BottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration:
-          BoxDecoration(border: Border(top: BorderSide(color: Colors.black12))),
+          const BoxDecoration(border: Border(top: BorderSide(color: Colors.black12))),
       child: Column(
         children: <Widget>[
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Row(
@@ -120,9 +120,9 @@ class BottomBar extends StatelessWidget {
         onTap: () {
           // Navigate to the next screen
           // Replace 'YourNextScreen()' with your actual screen widget
-          Get.to(SearchTopUsers());
+          Get.to(const SearchTopUsers());
         },
-        child: Container(
+        child: SizedBox(
           height: 45,
           width: 75,
           child: Column(
@@ -139,7 +139,7 @@ class BottomBar extends StatelessWidget {
                     : Colors.black54,
                 size: NavigationIconSize,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 7,
               ),
               Text(
@@ -167,9 +167,9 @@ class BottomBar extends StatelessWidget {
         onTap: () {
           // Navigate to the next screen
           // Replace 'YourNextScreen()' with your actual screen widget
-          Get.to(AllActivityScreen());
+          Get.to(const AllActivityScreen());
         },
-        child: Container(
+        child: SizedBox(
           height: 45,
           width: 75,
           child: Column(
@@ -186,7 +186,7 @@ class BottomBar extends StatelessWidget {
                     : Colors.black54,
                 size: NavigationIconSize,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 7,
               ),
               Text(
@@ -215,9 +215,9 @@ class BottomBar extends StatelessWidget {
         onTap: () {
           // Navigate to the next screen
           // Replace 'YourNextScreen()' with your actual screen widget
-          Get.to(ProfileScreen());
+          Get.to(()=> const ProfileScreen());
         },
-        child: Container(
+        child: SizedBox(
           height: 45,
           width: 75,
           child: Column(
@@ -234,7 +234,7 @@ class BottomBar extends StatelessWidget {
                     : Colors.black54,
                 size: NavigationIconSize,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 7,
               ),
               Text(
@@ -263,9 +263,9 @@ class BottomBar extends StatelessWidget {
         onTap: () {
           // Navigate to the next screen
           // Replace 'YourNextScreen()' with your actual screen widget
-          Get.to(TrandingScreen());
+          Get.to(const TrandingScreen());
         },
-        child: Container(
+        child: SizedBox(
           height: 45,
           width: 75,
           child: Column(
@@ -282,7 +282,7 @@ class BottomBar extends StatelessWidget {
                     : Colors.black54,
                 size: NavigationIconSize,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 7,
               ),
               Text(
@@ -311,7 +311,7 @@ class BottomBar extends StatelessWidget {
         onTap: () {
           GetIt.instance<FeedViewModel>().setActualScreen(index);
         },
-        child: Container(
+        child: SizedBox(
           height: 45,
           width: 75,
           child: Column(
@@ -328,7 +328,7 @@ class BottomBar extends StatelessWidget {
                     : Colors.black54,
                 size: NavigationIconSize,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 7,
               ),
               Text(

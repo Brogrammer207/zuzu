@@ -1,10 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-
 import 'inboxActivity/allActivityScreen.dart';
-import 'profileAndSetting/profileScreen.dart';
+import 'profile_and_setting/profileScreen.dart';
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});
@@ -19,20 +16,20 @@ class _HomePageScreenState extends State<HomePageScreen> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text('HomePage'),
+        title: const Text('HomePage'),
         actions: [
           GestureDetector(
             onTap: (){
-              Get.to(const ProfileScreen());
+              Get.to(()=> const ProfileScreen());
             },
-              child: Icon(Icons.person)),
-          SizedBox(width: 15,),
+              child: const Icon(Icons.person)),
+          const SizedBox(width: 15,),
           GestureDetector(
             onTap: (){
               Get.to(const AllActivityScreen());
             },
-              child: Icon(Icons.message)),
-          SizedBox(width: 15,),
+              child: const Icon(Icons.message)),
+          const SizedBox(width: 15,),
         ],
       ),
     );

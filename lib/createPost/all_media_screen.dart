@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../screens/widgets/apptheme.dart';
 import '../screens/widgets/commanButton.dart';
@@ -25,9 +24,9 @@ class _AllMediaScreenState extends State<AllMediaScreen> {
               children: [Text('All Media'), Icon(Icons.keyboard_arrow_down_outlined)],
             ),
           ),
-          actions: [
-            const Icon(Icons.more_horiz),
-            const SizedBox(
+          actions: const [
+            Icon(Icons.more_horiz),
+            SizedBox(
               width: 10,
             )
           ],
@@ -61,13 +60,6 @@ class _AllMediaScreenState extends State<AllMediaScreen> {
                       return Padding(
                         padding: const EdgeInsets.all(2.0),
                         child: GridTile(
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(25.0),
-                            child: Image.network(
-                              'https://static.vecteezy.com/system/resources/thumbnails/025/284/015/small_2x/close-up-growing-beautiful-forest-in-glass-ball-and-flying-butterflies-in-nature-outdoors-spring-season-concept-generative-ai-photo.jpg', // Replace with your image URL
-                              fit: BoxFit.cover,
-                            ),
-                          ),
                           header: GridTileBar(
                             backgroundColor: Colors.transparent,
                             leading: const SizedBox(
@@ -79,6 +71,13 @@ class _AllMediaScreenState extends State<AllMediaScreen> {
                                 // Handle checkbox state change
                                 // You can update your data model here
                               },
+                            ),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(25.0),
+                            child: Image.network(
+                              'https://static.vecteezy.com/system/resources/thumbnails/025/284/015/small_2x/close-up-growing-beautiful-forest-in-glass-ball-and-flying-butterflies-in-nature-outdoors-spring-season-concept-generative-ai-photo.jpg', // Replace with your image URL
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),

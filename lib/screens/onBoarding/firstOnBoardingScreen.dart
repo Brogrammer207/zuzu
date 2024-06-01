@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../authScreens/letsYouInScreen.dart';
+import '../authScreens/lets_you_in_screen.dart';
 import '../widgets/apptheme.dart';
 import 'onboarding_list.dart';
 
@@ -83,27 +83,30 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           SizedBox(
             height: height * .07,
           ),
-          Container(
-              height: height * .08,
-              width: width * .95,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-              ),
-              child: ElevatedButton(
-                onPressed: () {
-                  controller.nextPage(duration: const Duration(milliseconds: 300), curve: Curves.ease);
-                  if (_pageIndex.value == 2) {
-                    Get.offAll(()=> const LetsYouIN());
-                  }
-                },
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xffff4d67),
-                    textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: ElevatedButton(
+              onPressed: () {
+                controller.nextPage(duration: const Duration(milliseconds: 300), curve: Curves.ease);
+                if (_pageIndex.value == 2) {
+                  Get.offAll(()=> const LetsYouIN());
+                }
+              },
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xffff4d67),
+                  textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 25,
+                  vertical: 16
+                ),
                 child: Text(
                   OnBoardingData[min(_pageIndex.value, OnBoardingData.length - 1)].buttonText.toString(),
                   style: const TextStyle(color: Colors.white),
                 ),
-              )),
+              ),
+            ),
+          ),
           SizedBox(
             height: height * .07,
           ),

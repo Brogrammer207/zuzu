@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -27,7 +26,7 @@ class _CommonButtonState extends State<CommonButton> {
       onTap: widget.onPressed,
       child: Container(
           margin: const EdgeInsets.only(left: 15, right: 15),
-          height: 55,
+          height: 45,
           width: Get.width,
           decoration: BoxDecoration(color: widget.color, borderRadius: BorderRadius.circular(25)),
           child: Center(

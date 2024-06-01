@@ -11,8 +11,8 @@ import '../../firebase/firebase_authentication.dart';
 import '../../models/model_login_response.dart';
 import '../widgets/apptheme.dart';
 import '../widgets/commanButton.dart';
-import 'signInScreen.dart';
-import 'signUpScreen.dart';
+import 'sign_in_screen.dart';
+import 'sign_up_screen.dart';
 
 class LetsYouIN extends StatefulWidget {
   const LetsYouIN({super.key});

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../profileAndSetting/profileScreen.dart';
+import '../profile_and_setting/profileScreen.dart';
 import '../widgets/apptheme.dart';
 import '../widgets/commanButton.dart';
 import 'tellUsAboutYourSelfScreen.dart';

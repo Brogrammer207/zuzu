@@ -1,14 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/get_navigation.dart';
-
 import 'package:get_it/get_it.dart';
 import 'package:stacked/stacked.dart';
 import 'package:video_player/video_player.dart';
-import '../../profileAndSetting/profileScreen.dart';
+import '../../profile_and_setting/profileScreen.dart';
 import '../../widgets/apptheme.dart';
 import 'actions_toolbar.dart';
 import 'bottom_bar.dart';
@@ -22,10 +19,10 @@ class FeedScreen extends StatefulWidget {
   const FeedScreen({super.key});
 
   @override
-  _FeedScreenState createState() => _FeedScreenState();
+  FeedScreenState createState() => FeedScreenState();
 }
 
-class _FeedScreenState extends State<FeedScreen> {
+class FeedScreenState extends State<FeedScreen> {
   final locator = GetIt.instance;
   final feedViewModel = GetIt.instance<FeedViewModel>();
   @override

@@ -6,7 +6,7 @@ import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:zuzu/helper/helper.dart';
 import '../widgets/apptheme.dart';
 import '../widgets/commanButton.dart';
-import '../widgets/commanTextFromField.dart';
+import '../widgets/comman_text_from_field.dart';
 import 'createNewPinScreen.dart';
 import 'setYourFingerPrintScreen.dart';
 

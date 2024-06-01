@@ -1,21 +1,22 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:zuzu/screens/authScreens/signUpScreen.dart';
-import '../account_setup/chooseYourIntrest.dart';
-import '../forgetPassword/forgetPasswordScreen.dart';
+
 import '../widgets/apptheme.dart';
 import '../widgets/commanButton.dart';
-import '../widgets/commanTextFromField.dart';
+import '../widgets/comman_text_from_field.dart';
+import 'sign_in_screen.dart';
 
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<SignInScreen> createState() => _SignInScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   bool value = false;
   bool showValidation = false;
   @override
@@ -23,17 +24,22 @@ class _SignInScreenState extends State<SignInScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-          // leading: const Icon(Icons.arrow_back_rounded),
-          ),
+        // leading: IconButton(
+        //   onPressed: (){
+        //     Navigator.pop(context);
+        //   },
+        //   icon: Icon(Icons.adaptive.arrow_back_rounded),
+        // ),
+      ),
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.only(left: 15, right: 15),
+          margin: const EdgeInsets.only(left: 15,right: 15),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text(
-                'Login to your Account',
+                'Create Your Account',
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 40,
@@ -93,28 +99,10 @@ class _SignInScreenState extends State<SignInScreen> {
                 height: 20,
               ),
               CommonButton(
-                text: 'Sign In',
-                color: AppTheme.primaryColor,
+                text: 'Sign Up',
                 textColor: Colors.white,
-                onPressed: () {
-                  Get.to(const ChooseYourIntrestScreen());
-                },
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              GestureDetector(
-                onTap: () {
-                  Get.to(const ForgetPasswordScreen());
-                },
-                child: const Text(
-                  "Forget Password",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: AppTheme.primaryColor,
-                    fontSize: 16,
-                  ),
-                ),
+                color: AppTheme.primaryColor,
+                onPressed: () {},
               ),
               const SizedBox(
                 height: 100,
@@ -172,7 +160,7 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
               Text.rich(
                 TextSpan(
-                    text: "Do not have an account ? ",
+                    text: "Already have an account ? ",
                     style: const TextStyle(
                       color: Color(0xff6F6B7A),
                       fontWeight: FontWeight.bold,
@@ -180,15 +168,15 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                     children: [
                       TextSpan(
-                          text: "Sign Up",
+                          text: "Login now",
                           style: const TextStyle(
                             color: Colors.blue,
                             fontWeight: FontWeight.bold,
                           ),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                              Get.to(() => const SignUpScreen());
-                            })
+                          recognizer: TapGestureRecognizer()..onTap = () {
+                            Get.back();
+                            // Get.to(()=> const SignInScreen());
+                          })
                     ]),
               ),
               const SizedBox(
